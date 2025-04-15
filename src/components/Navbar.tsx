@@ -6,6 +6,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
+import { useRouter } from 'next/navigation';
+
+
 interface NavItem {
   name: string;
   url: string;
@@ -18,7 +21,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ className }) => {
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState<string>("");
-  
+
   const navItems: NavItem[] = [
     { name: "Home", url: "/" },
     { name: "Work", url: "/work" },
@@ -33,6 +36,18 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
     setActiveItem(active);
   }, [pathname]);
 
+  const router = useRouter();
+  const pathnameLogo = usePathname();
+  
+  const handleLogoClick = (e) => {
+    if (pathnameLogo === "/") {
+      // Already on homepage, scroll to top
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // Else: Link will navigate normally
+  };
+
   return (
     <div className={cn(
       "fixed top-2 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-screen-lg px-4",
@@ -40,7 +55,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
     )}>
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl w-24 font-bold">
+        <Link href="/" onClick={handleLogoClick} className="text-2xl w-24 font-bold">
           <div className="flex items-center">
             <span className="text-white">TR</span>
           </div>
@@ -50,7 +65,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
         <div className="flex items-center justify-center backdrop-blur-md bg-black/20 rounded-full px-6 py-2 border border-white/10">
           {navItems.map((item) => {
             const isActive = activeItem === item.name;
-            
+
             return (
               <Link
                 key={item.name}
@@ -77,7 +92,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
                     <div className="relative">
                       {/* Main line */}
                       <div className="h-1 w-8 bg-white rounded-full" />
-                      
+
                       {/* Glow effects */}
                       <div className="absolute w-12 h-6 bg-white/20 rounded-full blur-md -top-2 -left-2" />
                       <div className="absolute w-8 h-4 bg-white/30 rounded-full blur-sm -top-1 left-0" />

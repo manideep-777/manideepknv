@@ -145,3 +145,43 @@
 .animate-shiny {
   animation: shiny 2s linear infinite;
 }
+
+
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scrollLeft {
+  animation: scrollLeft 30s linear infinite;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}

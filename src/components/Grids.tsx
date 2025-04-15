@@ -1,20 +1,22 @@
 import React from 'react';
-import { BellIcon, CalendarIcon, FileTextIcon, Share2Icon } from "lucide-react";
+import { BellIcon, Share2Icon } from "lucide-react";
+import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/magicui/animated-list";
 import { Globe } from "@/components/magicui/globe";
 import { IconCloud } from "@/components/magicui/icon-cloud";
 
-// Main Bento Grid component
-const BentoGrid = ({ children }) => {
+
+// BentoGrid component following MagicUI structure
+const BentoGrid = ({ className, children }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 p-4 mx-auto max-w-7xl">
+    <div className={cn("grid grid-cols-1 md:grid-cols-12 gap-4 p-4 mx-auto max-w-7xl", className)}>
       {children}
     </div>
   );
 };
 
-// Individual Bento Card component
+// BentoCard component following MagicUI structure
 const BentoCard = ({
   title,
   subtitle,
@@ -28,7 +30,10 @@ const BentoCard = ({
 }) => {
   return (
     <div
-      className={`group relative overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 shadow-md transition-all hover:shadow-lg ${className}`}
+      className={cn(
+        "group relative overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 shadow-md transition-all hover:shadow-lg",
+        className
+      )}
     >
       <div className="h-full p-6 flex flex-col justify-between">
         {subtitle && (
@@ -50,7 +55,7 @@ const BentoCard = ({
           </div>
         </div>
         {background && (
-          <div className="mt-4 flex-grow">{background}</div>
+          <div className="mt-4 flex-grow relative">{background}</div>
         )}
         {cta && href && (
           <div className="mt-4">
@@ -83,6 +88,30 @@ const BentoCard = ({
   );
 };
 
+// Sample files for Marquee component
+const files = [
+  {
+    name: "project1.js",
+    body: "React-based e-commerce platform with cart functionality and payment gateway integration.",
+  },
+  {
+    name: "portfolio.jsx",
+    body: "Personal portfolio website showcasing projects and skills using React and Tailwind CSS.",
+  },
+  {
+    name: "dashboard.tsx",
+    body: "Admin dashboard with analytics, user management, and content moderation features.",
+  },
+  {
+    name: "api.js",
+    body: "RESTful API implementation with authentication, authorization, and data validation.",
+  },
+  {
+    name: "components.jsx",
+    body: "Reusable UI component library with customizable styling and responsive design.",
+  },
+];
+
 // Skill icons for the tech enthusiast card
 const slugs = [
   "typescript",
@@ -108,127 +137,101 @@ const images = slugs.map(
 // Feature cards for the bottom section
 const featureCards = [
   {
-    title: "Analytics Dashboard",
-    description: "Provides real-time insights into user behavior"
+    title: "Project Planning & Strategy",
+    description: "I work closely with clients to define clear goals and develop a strategic roadmap for each project."
   },
   {
-    title: "Brand Identity",
-    description: "Unified design assets, including logos and themes"
+    title: "Design & User Experience",
+    description: "I create intuitive and aesthetically pleasing designs that focus on user-centered experiences."
   },
   {
-    title: "API Documentation",
-    description: "Guides developers to integrate with our API"
+    title: "Custom Development",
+    description: "I write clean, efficient code to build custom solutions tailored to the specific needs of the project."
   },
   {
-    title: "User Onboarding",
-    description: "Step-by-step guides and interactive tutorials"
+    title: "API Integration",
+    description: "I integrate third-party services and APIs to enhance functionality and improve user experience."
   },
   {
-    title: "Subscription Management",
-    description: "Handles recurring payments and user accounts"
+    title: "Testing & Optimization",
+    description: "I conduct rigorous testing to ensure functionality, performance, and security across all platforms."
   },
   {
-    title: "Analytics Dashboard",
-    description: "Provides real-time insights into user behavior"
+    title: "Continuous Support & Maintenance",
+    description: "I provide ongoing support and updates to ensure the project remains relevant and fully functional over time."
   }
 ];
 
 export default function PortfolioGrid() {
   return (
-    <div className="bg-black min-h-screen py-8">
-      {/* First row - Collaboration card (spans full width) */}
-      <div className="px-4 mx-auto max-w-7xl mb-4">
+    <div className="bg-black w-full pt-40 min-h-screen py-8">
+      {/* Two-row grid for the content */}
+      <BentoGrid>
+        {/* Tech stack card - spans left column, full height */}
         <BentoCard
-          icon={BellIcon}
-          subtitle="Collaboration"
-          title="I prioritize client collaboration, fostering open communication"
-          cta="Book a call"
-          href="#contact"
-          className="h-48 w-full"
+          subtitle="Tech Enthusiast"
+          title="Always excited to build cool stuff with the latest tech."
+          className="md:col-span-4 md:row-span-2 h-full"
           background={
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="relative">
-                <div className="w-32 h-32 rounded-full border border-zinc-800 absolute opacity-20"></div>
-                <div className="w-48 h-48 rounded-full border border-zinc-800 absolute opacity-20" style={{ top: '-8px', left: '-8px' }}></div>
-                <div className="w-64 h-64 rounded-full border border-zinc-800 absolute opacity-20" style={{ top: '-16px', left: '-16px' }}></div>
-                <div className="h-20 w-20 rounded-full overflow-hidden border-2 border-blue-500 z-10 relative">
-                  <div className="h-full w-full bg-blue-500"></div>
-                </div>
+            <div className="relative flex size-full items-center justify-center overflow-hidden">
+              <IconCloud images={images} />
+            </div>
+          }
+        />
+
+        {/* Middle column, first row - Let's work together */}
+        <BentoCard
+          title="Let's work together"
+          description="on your next project"
+          className="md:col-span-4 h-64"
+          email="talaganarajesh@gmail.com"
+          background={
+            <div className="flex justify-center items-center mt-4">
+              <div className="h-16 w-16 rounded-full bg-purple-700 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">TR</span>
               </div>
             </div>
           }
         />
-      </div>
 
-      {/* Two-row grid for the remaining content */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 px-4 mx-auto max-w-7xl">
-        {/* Tech stack card - spans left column, full height */}
-        <div className="md:col-span-4 md:row-span-2">
-          <BentoCard
-            subtitle="Tech Enthusiast"
-            title="Passionate about cutting-edge development technologies"
-            className="h-full"
-            background={
-              <div className="relative flex size-full items-center justify-center overflow-hidden">
-                <IconCloud images={images} />
-              </div>
-            }
-          />
-        </div>
-
-        {/* Middle column, first row - Let's work together */}
-        <div className="md:col-span-4">
-          <BentoCard
-            title="Let's work together"
-            description="on your next project"
-            className="h-64"
-            email="hello@aayushbharti.in"
-            background={
-              <div className="flex justify-center items-center mt-4">
-                <div className="h-16 w-16 rounded-full bg-blue-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">AB</span>
-                </div>
-              </div>
-            }
-          />
-        </div>
-
-        {/* Right column, first row - Remote */}
-        <div className="md:col-span-4">
-          <BentoCard
-            subtitle="Remote"
-            title="India - 24:28"
-            description="I'm very flexible with time zone communications"
-            className="h-64"
-            background={
-              <div className="relative flex size-full items-center justify-center overflow-hidden">
+        {/* Right column, first row - Remote with Globe */}
+        <BentoCard
+          subtitle="Remote"
+          title="India"
+          description="I'm very flexible with time zone communications"
+          className="md:col-span-4 h-64"
+          background={
+            <div className="absolute inset-0 z-0">
+              <div className="w-full h-full opacity-30 scale-125">
                 <Globe />
               </div>
-            }
-          />
-        </div>
+            </div>
+          }
+        />
 
-        {/* Bottom row, spans middle and right columns - Inside Scoop */}
-        <div className="md:col-span-8">
-          <BentoCard
-            subtitle="The Inside Scoop"
-            title="Currently building a SaaS Application"
-            className="h-64"
-            background={
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-4 overflow-x-auto">
-                {featureCards.map((feature, idx) => (
-                  <div key={idx} className="bg-zinc-800 rounded-lg p-3 min-w-32">
-                    <h4 className="text-xs font-medium text-zinc-200 mb-1">{feature.title}</h4>
-                    <p className="text-xs text-zinc-400">
-                      {feature.description}
-                    </p>
+
+        {/* SaaS Features */}
+        <BentoCard
+          subtitle="Behind the Scenes"
+          title="Currently crafting a Business Portfolio for Client."
+          className="md:col-span-8"
+          background={
+            <div className="relative w-full overflow-hidden">
+              {/* Animation Container */}
+              <div className="flex w-max animate-scrollLeft gap-2 mt-4">
+                {[...featureCards, ...featureCards].map((feature, idx) => (
+                  <div key={idx} className="h-40 bg-zinc-800 rounded-lg p-3 w-36">
+                    <h4 className="text-xs font-medium text-zinc-200 mb-2">{feature.title}</h4>
+                    <p className="text-xs text-zinc-400">{feature.description}</p>
                   </div>
                 ))}
               </div>
-            }
-          />
-        </div>
-      </div>
+            </div>
+          }
+        />
+
+
+      </BentoGrid>
     </div>
   );
 }

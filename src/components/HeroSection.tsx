@@ -12,13 +12,14 @@ export default function HeroSection() {
   return (
     <div className=" flex min-h-screen bottom-0 w-full h-full flex-col items-center justify-center px-4 overflow-hidden">
       {/* Background gradient */}
+      
       <div className="absolute inset-0 bg-black/60 z-0">
         {/* Star field effect */}
       </div>
 
       {/* Planet curve at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-purple-900 rounded-t-[100%] blur-md z-0"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-black/80 rounded-t-[100%] z-0"></div>
+      <div className="absolute border-b-8 mb-2 border-black bottom-0 left-0 right-0 h-32 bg-purple-900 rounded-t-[100%] blur-md z-0"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-black/90 rounded-t-[100%] z-0"></div>
 
       {/* Content container */}
       <div className="container mx-auto max-w-6xl flex flex-col justify-center items-center z-10 mt-24">
@@ -82,8 +83,8 @@ export default function HeroSection() {
 
             {/* Hover Popup */}
             <div
-              className="absolute  -top-22 left-1/2 ml-5 -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out
-               border border-white/30 shadow-lg rounded-lg overflow-hidden z-10"
+              className="absolute rounded-full  -top-20 left-1/2 ml-8 -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out
+               border border-white/30 shadow-lg overflow-hidden z-10"
             >
               <Image
                 src={myPhoto}
@@ -106,9 +107,9 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           {/* Let's Connect Button */}
-          <Link href="/contact" className="group flex items-center gap-2 px-6 py-4 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white hover:bg-black/50 transition-colors">
+          <Link href="/contact" className="group flex items-center gap-2 px-6 py-4 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-zinc-400 hover:bg-black/50 transition-colors">
             <span className="text-lg font-medium">Let's Connect</span>
-            <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center group-hover:bg-purple-600 group-hover:translate-x-2 transition-all duration-300 ease-in-out">
+            <div className="h-8 w-8 rounded-full bg-zinc-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:translate-x-2 transition-all duration-300 ease-in-out">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -118,10 +119,10 @@ export default function HeroSection() {
           {/* Email */}
           <a href="mailto:talaganarajesh@gmail.com" className="hidden md:flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" strokeWidth="2" />
-              <path d="M2 7L9.95263 12.4526C10.5936 12.8747 11.3796 13.0964 12.1748 13.0964C12.97 13.0964 13.756 12.8747 14.397 12.4526L22 7" stroke="white" strokeWidth="2" />
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="gray" strokeWidth="2" />
+              <path d="M2 7L9.95263 12.4526C10.5936 12.8747 11.3796 13.0964 12.1748 13.0964C12.97 13.0964 13.756 12.8747 14.397 12.4526L22 7" stroke="gray" strokeWidth="2" />
             </svg>
-            <span className="text-white hover:text-purple-500 transition-all duration-300 ">talaganarajesh@gmail.com</span>
+            <span className="text-zinc-400 hover:text-purple-500 transition-all duration-300 ">talaganarajesh@gmail.com</span>
           </a>
 
         </motion.div>

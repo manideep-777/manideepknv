@@ -10,18 +10,19 @@ const MOVEMENT_DAMPING = 1400;
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
-  height: 800,
-  onRender: () => {},
-  devicePixelRatio: 2,
-  phi: 0,
-  theta: 0.3,
-  dark: 0,
-  diffuse: 0.4,
-  mapSamples: 16000,
-  mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
-  markerColor: [251 / 255, 100 / 255, 21 / 255],
-  glowColor: [1, 1, 1],
+height: 800,
+onRender: () => {},
+devicePixelRatio: 2,
+phi: 0,
+theta: 0.3,
+dark: 0,
+diffuse: 0.4,
+mapSamples: 16000,
+mapBrightness: 1.2,
+baseColor: [1, 1, 1],           // Light purple (#E6CCFF)
+markerColor: [0.24, 0, 0.11],        // Dark purple (#4B0082)
+glowColor: [1, 1, 1],                 // Blue (#0000FF)
+
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -33,6 +34,19 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [40.7128, -74.006], size: 0.1 },
     { location: [34.6937, 135.5022], size: 0.05 },
     { location: [41.0082, 28.9784], size: 0.06 },
+    { location: [51.5074, -0.1278], size: 0.1 },
+    { location: [55.7558, 37.6173], size: 0.05 },
+    { location: [48.8566, 2.3522], size: 0.1 },
+    { location: [52.5200, 13.4050], size: 0.05 },
+    { location: [35.6895, 139.6917], size: 0.1 },
+    { location: [37.7749, -122.4194], size: 0.1 },
+    { location: [34.0522, -118.2437], size: 0.1 },
+    { location: [55.9533, -3.1883], size: 0.05 },
+    { location: [48.1351, 11.582], size: 0.05 },
+    { location: [59.9342, 30.335], size: 0.05 },
+    { location: [40.4168, -3.7038], size: 0.05 },
+    { location: [41.9028, 12.4964], size: 0.05 },
+
   ],
 };
 
