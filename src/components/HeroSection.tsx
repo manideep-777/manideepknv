@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import myPhoto from "/public/myPhoto.png";
+import myPhoto from "/public/myPhoto.jpg";
 
 export default function HeroSection() {
   return (
@@ -30,13 +30,13 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-12"
         >
-          <Link href="/ventures" className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/50 transition-colors">
+          <a href="https://getmaterial.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/50 transition-colors">
             <span className="bg-purple-800 text-gray-200 text-xs font-medium px-2 py-1 rounded-full">New</span>
             <AnimatedShinyText>Project Launched</AnimatedShinyText>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </Link>
+          </a>
         </motion.div>
 
         {/* Main Headline */}

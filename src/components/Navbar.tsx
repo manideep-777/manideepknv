@@ -24,10 +24,9 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
 
   const navItems: NavItem[] = [
     { name: "Home", url: "/" },
-    { name: "Work", url: "/work" },
+    { name: "Projects", url: "/projects" },
     { name: "About", url: "/about" },
-    { name: "Blog", url: "/blog" },
-    { name: "More", url: "/more" },
+    { name: "Contact", url: "/contact" },
   ];
 
   useEffect(() => {

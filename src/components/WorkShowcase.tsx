@@ -1,15 +1,16 @@
 'use client';
 
-// components/WorkShowcaseSnapping.tsx
+// components/WorkShowcase.tsx
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
 import type { StaticImageData } from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import GetMaterialImage from '/public/assets/getmaterial.png';
 import LemonStudioImage from '/public/assets/lemonstudio.png';
 import OpenRoomImage from '/public/assets/openroom-image.png';
 import AgroVisionImage from '/public/assets/agrovision.png';
+import PortfolioImage from '/public/assets/portfolio.png';
 
 import cloudflare from '/public/assets/cloudflare.png';
 import emailjs from '/public/assets/emailjs.jpeg';
@@ -24,9 +25,11 @@ import restapi from '/public/assets/restapi.webp';
 import tailwindcss from '/public/assets/tailwindcss.png';
 import expressjs from '/public/assets/expressjs.png';
 import gemini from '/public/assets/gemini.webp';
+import typescript from '/public/assets/typescript.svg';
+import shadcn from '/public/assets/shadcn.png';
+import framer from '/public/assets/framermotion.png';
 
-
-import { ArrowBigLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -43,13 +46,11 @@ interface Project {
   bgGradient: string;
 }
 
-export default function WorkShowcaseSnapping() {
+export default function WorkShowcase() {
   const [activeProject, setActiveProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const isScrollingRef = useRef<boolean>(false);
-
 
   const projects: Project[] = [
     {
@@ -101,8 +102,34 @@ export default function WorkShowcaseSnapping() {
       accentColor: "bg-yellow-500",
       bgGradient: "from-yellow-600 to-orange-600"
     },
+
     {
       id: 3,
+      title: "Portfolio",
+      tagline: "Dynamic and interactive portfolio showcasing my work and skills.",
+      description:
+        "Built a high-performance portfolio website to highlight my projects, technical skills, and web development journey, combineing modern UI design with smooth animations and a responsive layout",
+      techStack: [
+        { name: "Next.js", icon: nextjs },
+        { name: "TypeScript", icon: typescript },
+        { name: "Framer Motion", icon: framer },
+        { name: "Tailwind CSS", icon: tailwindcss },
+        { name: "ShadCN UI", icon: shadcn }
+      ],
+      features: [
+        "Smooth animations and transitions using Framer Motion",
+        "Interactive UI components with ShadCN and Tailwind CSS",
+        "Project showcase with detailed descriptions and tech stack",
+        "Fully responsive design optimized for all devices",
+        "Clean codebase using TypeScript for maintainability"
+      ],
+      image: PortfolioImage,
+      accentColor: "bg-cyan-500",
+      bgGradient: "from-cyan-800 to-cyan-600"
+    },
+    
+    {
+      id: 4,
       title: "OpenRoom",
       tagline: "Anonymous real-time chat with AI replies, threading, and safe moderation",
       description: "Developed a platform allowing users to engage in anonymous chats, with real-time messaging, AI-powered responses, and secure, moderated threads for safe interactions.",
@@ -127,7 +154,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 4,
+      id: 5,
       title: "AgroVision",
       tagline: "AI-powered crop disease detection and farmer support platform.",
       description: "Built a smart agricultural assistant that uses AI to detect crop diseases and provides actionable insights for farmers with a chatbot interface.",
@@ -150,46 +177,10 @@ export default function WorkShowcaseSnapping() {
     }
   ];
 
-
-  const hasMountedRef = useRef(false);
-
-
-  // Scroll to project when activeProject changes
-  useEffect(() => {
-
-    // Skip scroll on initial render
-    if (!hasMountedRef.current) {
-      hasMountedRef.current = true;
-      return;
-    }
-
-    if (!projectRefs.current[activeProject]) return;
-
-    isScrollingRef.current = true;
-
-    // Get the element to scroll to
-    const targetElement = projectRefs.current[activeProject];
-    if (!targetElement) return;
-
-    // Scroll to the element with smooth behavior
-    targetElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-
-    // Reset scrolling flag after animation completes
-    setTimeout(() => {
-      isScrollingRef.current = false;
-    }, 1000);
-  }, [activeProject]);
-
-  // Handle scroll events to update active project
+  // Handle scroll events to update active project based on visibility
   useEffect(() => {
     const handleScroll = () => {
-      // If we're currently programmatically scrolling, don't update activeProject
-      if (isScrollingRef.current) return;
-
-      // Calculate which project is most visible
+      // Calculate which project is most visible in the viewport
       const viewportHeight = window.innerHeight;
       const viewportCenter = viewportHeight / 2;
 
@@ -209,78 +200,38 @@ export default function WorkShowcaseSnapping() {
         }
       });
 
-      // Only update if we have a new closest project
+      // Update active project for the right panel display
       if (closestProject !== activeProject) {
         setActiveProject(closestProject);
       }
     };
 
-    // Add special wheel handler for snap effect
-    const handleWheel = (e: WheelEvent) => {
-      if (isScrollingRef.current) {
-        // If we're in a programmatic scroll, prevent default
-        // to avoid interfering with the smooth scrolling
-        e.preventDefault();
-        return;
-      }
-
-      // If we're not in a programmatic scroll, let the regular
-      // scroll handler deal with it
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('wheel', handleWheel, { passive: false });
-
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleWheel);
     };
   }, [activeProject]);
-
-  // Custom cursor styles for hover effect
-  const cursorVariants = {
-    default: {
-      opacity: 0,
-      scale: 0,
-    },
-    hover: {
-      opacity: 1,
-      scale: 1,
-    }
-  };
 
   return (
     <div
       ref={componentRef}
       className="bg-black pt-32 w-full text-white"
-      style={{ scrollSnapType: 'y mandatory' }}
     >
-      <div className="py-10 px-4 md:px-10 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
-            className="text-gray-300 uppercase tracking-wider font-medium text-sm mb-2"
-          >
+      <div className="pt-10 px-4 md:px-10 max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-gray-300 uppercase tracking-wider font-medium text-sm mb-2">
             Code Meets Creativity
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: false }}
-            className="text-5xl md:text-6xl font-bold"
-          >
+          </h2>
+          <div className="text-5xl md:text-6xl font-bold">
             <span className="text-white">Crafted </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Projects</span>
-          </motion.div>
+          </div>
         </div>
 
         <div className="relative">
           <div className="flex flex-col md:flex-row">
-            {/* Left side - scrollable projects */}
+            {/* Left side - smoothly scrollable projects */}
             <div className="w-full md:w-1/2">
               {projects.map((project, index) => {
                 const isHovered = hoveredProject === index;
@@ -291,47 +242,32 @@ export default function WorkShowcaseSnapping() {
                     ref={el => {
                       projectRefs.current[index] = el;
                     }}
-                    className=" py-24 flex items-center relative"
-                    style={{ scrollSnapAlign: 'center' }}
+                    className="py-24 flex items-center relative"
                     onMouseEnter={() => setHoveredProject(index)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, y: 100, scale: 0.9 }}
-                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                      whileHover={{
-                        scale: 1.02,
-                        transition: { duration: 0.3 }
-                      }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      viewport={{ once: false, margin: "-20%" }}
-                      className="w-full cursor-pointer"
-                    >
-                      <div className={`bg-gradient-to-b ${projects[activeProject].bgGradient} overflow-hidden rounded-3xl px-8 pt-10 flex flex-col`}>
+                    <div className="w-full cursor-pointer">
+                      <div className={`bg-gradient-to-b ${project.bgGradient} overflow-hidden rounded-3xl px-8 pt-10 flex flex-col`}>
                         <div className="text-white flex flex-row text-2xl font-bold mb-6">
                           {project.tagline}
 
                           <div className="">
-                            <motion.div
-                              className="flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-6 py-3"
-                              initial={{ opacity: 0 }}
-                            animate={{ opacity: isHovered ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                            >
-                              <ArrowRight className="w-5 h-5" />
-                            </motion.div>
+                            {isHovered && (
+                              <div className="flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-6 py-3">
+                                <ArrowRight className="w-5 h-5" />
+                              </div>
+                            )}
                           </div>
-
                         </div>
 
-                        <div className={`relative h-80 w-full overflow-hidden transition-transform duration-300 rounded-xl mt-4 group ${isHovered ? 'scale-110 -rotate-5' : 'scale-100'} `}>
+                        <div className="relative h-80 w-full overflow-hidden rounded-xl mt-4">
                           <Image
                             src={project.image}
                             alt={project.title}
                           />
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
                 );
               })}
