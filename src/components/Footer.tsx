@@ -6,14 +6,15 @@ import { FaLinkedin, FaGithub, FaWhatsapp, FaPhone } from 'react-icons/fa';
 const Footer: React.FC = () => {
     return (
         <footer className="w-full bg-black text-white py-16">
-            <div className=" mx-auto px-4 max-w-7xl">
+            <div className="mx-auto px-4 max-w-7xl">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     {/* Column 1 - Personal Info */}
                     <div className="col-span-1">
                         <h2 className="text-2xl font-bold mb-4">Talagana Rajesh</h2>
                         <p className="text-gray-400 mb-6">
-                            Building web solutions where clean design and powerful functionality work in harmony.            </p>
+                            Building web solutions where clean design and powerful functionality work in harmony.
+                        </p>
                         <div className="flex space-x-4">
                             <Link href="https://www.linkedin.com/in/talaganaRajesh" className="text-gray-400 hover:text-white transition-colors">
                                 <FaLinkedin size={20} />
@@ -27,7 +28,6 @@ const Footer: React.FC = () => {
                                 <FaWhatsapp size={20} />
                                 <span className="sr-only">WhatsApp</span>
                             </Link>
-
                         </div>
                     </div>
 
@@ -55,30 +55,31 @@ const Footer: React.FC = () => {
                         <nav className="flex flex-col space-y-2">
                             <a href="https://getmaterial.vercel.app"
                                 target="_blank" rel="noopener noreferrer"
-
                                 className="text-gray-400 hover:text-white transition-colors">
                                 GetMaterial
                             </a>
-                            <a href="https://oroom.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                            <a href="https://oroom.vercel.app" 
+                                target="_blank" rel="noopener noreferrer" 
+                                className="text-gray-400 hover:text-white transition-colors">
                                 OpenRoom
                             </a>
-                            <a href="https://sih-agrovision.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                            <a href="https://sih-agrovision.vercel.app" 
+                                target="_blank" rel="noopener noreferrer" 
+                                className="text-gray-400 hover:text-white transition-colors">
                                 AgroVision
                             </a>
-                            <a href="https://lemonstudio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                            <a href="https://lemonstudio.vercel.app" 
+                                target="_blank" rel="noopener noreferrer" 
+                                className="text-gray-400 hover:text-white transition-colors">
                                 Lemon Studio
                             </a>
-
-
-
                         </nav>
                     </div>
-
 
                     {/* Column 4 - Contact Info */}
                     <div className="col-span-1">
                         <p className="mb-4">
-                            I'm open to freelance projects, full-time roles, or collaborative ideas. connect and build something meaningful together.
+                            I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
                         </p>
                         <Link
                             href="mailto:talaganarajesh@gmail.com"
@@ -105,7 +106,7 @@ const Footer: React.FC = () => {
 
                 {/* Copyright */}
                 <div className="pt-8 border-t border-gray-800 text-center md:text-left text-gray-500 text-sm">
-                    <p className='text-center'>Copyright © {new Date().getFullYear()} Talagana Rajesh. All rights reserved.</p>
+                    <p className="text-center">Copyright © {new Date().getFullYear()} Talagana Rajesh. All rights reserved.</p>
                 </div>
             </div>
         </footer>
