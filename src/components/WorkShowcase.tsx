@@ -20,7 +20,6 @@ import firebase from '/public/assets/firebase.webp';
 import framermotion from '/public/assets/framermotion.png';
 import nextjs from '/public/assets/nextjs.png';
 import nodejs from '/public/assets/nodejs.png';
-import picaura from '/public/assets/picaura.png';
 import python from '/public/assets/python.png';
 import react from '/public/assets/react.png';
 import restapi from '/public/assets/restapi.webp';
@@ -32,7 +31,7 @@ import shadcn from '/public/assets/shadcn.png';
 import framer from '/public/assets/framermotion.png';
 
 
-import { ArrowBigLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
