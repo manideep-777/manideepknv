@@ -32,10 +32,9 @@ const features = [
     title: "Landing Pages",
     description: "High-converting pages built for impact and speed.",
     icon: "⚡",
-    details: "I create fast, optimized landing pages designed to convert visitors into customers. From compelling headlines to focused call-to-actions, I make sure every element serves a purpose—delivering both performance and results."
+    details: "I create Applied fast, optimized landing pages designed to convert visitors into customers. From compelling headlines to focused call-to-actions, I make sure every element serves a purpose—delivering both performance and results."
   }
 ];
-
 
 export default function Services() {
   const [width, setWidth] = useState(0)
@@ -129,21 +128,20 @@ export default function Services() {
   }
 
   return (
-    <div className="py-32 bg-black w-full">
+    <div className="py-16 sm:py-32 bg-black w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: false }}
-          className="text-5xl mb-10 text-center md:text-6xl font-bold"
+          className="text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-10 text-center font-bold"
         >
-          <span className="text-white">What i </span>
+          <span className="text-white">What I </span>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Provide</span>
         </motion.div>
 
-        <motion.div ref={carousel} className="cursor-grab overflow-hidden">
+        <motion.div ref={carousel} className="cursor-grab overflow-x-auto sm:overflow-hidden snap-x snap-mandatory sm:snap-none">
           <motion.div
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
@@ -151,12 +149,12 @@ export default function Services() {
             animate={controls}
             style={{ x }}
             onDragEnd={handleDragEnd}
-            className="flex"
+            className="flex flex-nowrap sm:flex"
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="min-w-[300px] h-[400px] p-8 m-4 bg-zinc-800 rounded-3xl shadow-lg flex flex-col justify-between hover-lift transition-all duration-100 ease-in-out border-2 border-transparent hover:border-primary/10"
+                className="min-w-[80vw] sm:min-w-[300px] h-[360px] sm:h-[400px] p-6 sm:p-8 m-2 sm:m-4 bg-zinc-800 rounded-2xl sm:rounded-3xl shadow-lg flex flex-col justify-between snap-center border-2 border-transparent hover:border-primary/10"
                 whileHover={{
                   y: -5,
                   boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
@@ -164,14 +162,14 @@ export default function Services() {
                 }}
               >
                 <div>
-                  <div className="text-4xl text-white mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <div className="text-3xl sm:text-4xl text-white mb-3 sm:mb-4">{feature.icon}</div>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                  <p className="text-gray-300 text-sm sm:text-base">{feature.description}</p>
                 </div>
-                <div className="mt-4">
+                <div className="mt-3 sm:mt-4">
                   <button
                     onClick={() => openModal(feature)}
-                    className=" text-white hover:underline"
+                    className="text-white text-sm sm:text-base hover:underline"
                   >
                     Learn more →
                   </button>
@@ -185,7 +183,7 @@ export default function Services() {
         <AnimatePresence>
           {showModal && selectedFeature && (
             <motion.div
-              className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -193,25 +191,25 @@ export default function Services() {
             >
               <motion.div
                 ref={modalRef}
-                className="bg-zinc-800 rounded-lg p-8 max-w-lg w-full mx-4 relative shadow-xl"
+                className="bg-zinc-800 rounded-lg p-6 sm:p-8 max-w-[90vw] sm:max-w-lg w-full mx-4 relative shadow-xl"
                 variants={modalVariants}
               >
                 <button
                   onClick={closeModal}
-                  className="absolute top-4 right-4 text-gray-100 hover:text-gray-800 transition-colors duration-200"
+                  className="absolute top-3 sm:top-4 right-3 sm:right-4 text-gray-100 hover:text-gray-800 transition-colors duration-200"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
 
-                <div className="text-4xl mb-4">{selectedFeature.icon}</div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{selectedFeature.title}</h3>
-                <p className="text-gray-300 mb-6">{selectedFeature.description}</p>
-                <div className="border-t border-gray-700 pt-4">
-                  <h4 className="text-lg font-semibold mb-2 text-white">Details</h4>
-                  <p className="text-gray-300">{selectedFeature.details}</p>
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{selectedFeature.icon}</div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">{selectedFeature.title}</h3>
+                <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">{selectedFeature.description}</p>
+                <div className="border-t border-gray-700 pt-3 sm:pt-4">
+                  <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">Details</h4>
+                  <p className="text-gray-300 text-sm sm:text-base">{selectedFeature.details}</p>
                 </div>
               </motion.div>
             </motion.div>

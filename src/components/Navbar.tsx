@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,6 +20,8 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState<string>("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems: NavItem[] = [
     { name: "Home", url: "/" },
@@ -34,7 +36,31 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
     setActiveItem(active);
   }, [pathname, navItems]);
 
-  // Removed unused router variable
+  // Handle click outside of mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Check if the click was outside both the menu and the hamburger button
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        hamburgerButtonRef.current &&
+        !hamburgerButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Add event listener only when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   const pathnameLogo = usePathname();
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -47,11 +73,11 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        "fixed top-2 left-1/2 backdrop-blur-sm rounded-full -translate-x-1/2 z-50 pt-4 w-full max-w-screen-lg px-5",
+        "fixed md:top-2 left-1/2 md:backdrop-blur-sm rounded-full -translate-x-1/2 z-50 md:pt-4 w-full max-w-screen-lg px-5",
         className
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex backdrop-blur-sm md:py-0 md:backdrop-blur-none py-2 items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="text-2xl w-24 font-bold">
           <div className="flex items-center">
@@ -62,6 +88,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
         {/* Mobile Hamburger Icon */}
         <div className="md:hidden flex items-center">
           <button
+            ref={hamburgerButtonRef}
             className="text-white focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -120,10 +147,11 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 bg-black/30 rounded-xl px-4 py-4 border border-white/10"
+            className="md:hidden mt-4 bg-black/95 rounded-xl px-4 py-4 border border-white/10"
           >
             {navItems.map((item) => (
               <Link
@@ -145,7 +173,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block bg-white/10 px-4 py-2 rounded-full text-white text-sm text-center border border-white/10"
+                className="block bg-white/20 px-4 py-2 rounded-full text-white text-sm text-center border border-white/10"
               >
                 Book a Call
               </Link>

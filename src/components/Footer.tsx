@@ -1,93 +1,108 @@
-// components/Footer.tsx
 import React from 'react';
 import Link from 'next/link';
 import { FaLinkedin, FaGithub, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="w-full bg-black text-white py-16">
+        <footer className="w-full bg-black text-white py-10 sm:py-16">
             <div className="mx-auto px-4 max-w-7xl">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-20 mb-8 sm:mb-12">
                     {/* Column 1 - Personal Info */}
                     <div className="col-span-1">
-                        <h2 className="text-2xl font-bold mb-4">Talagana Rajesh</h2>
-                        <p className="text-gray-400 mb-6">
+                        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Talagana Rajesh</h2>
+                        <p className="text-gray-400 text-sm sm:text-base mb-4 sm:mb-6">
                             Building web solutions where clean design and powerful functionality work in harmony.
                         </p>
-                        <div className="flex space-x-4">
+                        <div className="flex space-x-3 sm:space-x-4">
                             <Link href="https://www.linkedin.com/in/talaganaRajesh" className="text-gray-400 hover:text-white transition-colors">
-                                <FaLinkedin size={20} />
+                                <FaLinkedin className="text-base sm:text-xl" />
                                 <span className="sr-only">LinkedIn</span>
                             </Link>
                             <Link href="https://github.com/talaganaRajesh" className="text-gray-400 hover:text-white transition-colors">
-                                <FaGithub size={20} />
+                                <FaGithub className="text-base sm:text-xl" />
                                 <span className="sr-only">GitHub</span>
                             </Link>
                             <Link href="https://wa.me/+919692544587" className="text-gray-400 hover:text-white transition-colors">
-                                <FaWhatsapp size={20} />
+                                <FaWhatsapp className="text-base sm:text-xl" />
                                 <span className="sr-only">WhatsApp</span>
                             </Link>
                         </div>
                     </div>
 
-                    {/* Column 2 - General Links */}
-                    <div className="col-span-1">
-                        <h3 className="text-lg font-semibold mb-4">The Website</h3>
-                        <nav className="flex flex-col space-y-2">
-                            <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                                Home
-                            </Link>
-                            <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
-                                Projects
-                            </Link>
-                            <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                                About
-                            </Link>
-                            <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
-                                Contact
-                            </Link>
-                        </nav>
-                    </div>
+                    {/* Column 2 & 3 - Website Links and Projects */}
+                    <div className="col-span-1 my-5 md:my-0 flex flex-row justify-between items-start gap-6 sm:gap-8">
+                        {/* Website Links */}
+                        <div>
+                            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">The Website</h3>
+                            <nav className="flex flex-col space-y-1 sm:space-y-2">
+                                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base">
+                                    Home
+                                </Link>
+                                <Link href="/projects" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base">
+                                    Projects
+                                </Link>
+                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base">
+                                    About
+                                </Link>
+                                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base">
+                                    Contact
+                                </Link>
+                            </nav>
+                        </div>
 
-                    <div className="col-span-1">
-                        <h3 className="text-lg font-semibold mb-4">Projects</h3>
-                        <nav className="flex flex-col space-y-2">
-                            <a href="https://getmaterial.vercel.app"
-                                target="_blank" rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-white transition-colors">
-                                GetMaterial
-                            </a>
-                            <a href="https://oroom.vercel.app" 
-                                target="_blank" rel="noopener noreferrer" 
-                                className="text-gray-400 hover:text-white transition-colors">
-                                OpenRoom
-                            </a>
-                            <a href="https://sih-agrovision.vercel.app" 
-                                target="_blank" rel="noopener noreferrer" 
-                                className="text-gray-400 hover:text-white transition-colors">
-                                AgroVision
-                            </a>
-                            <a href="https://lemonstudio.vercel.app" 
-                                target="_blank" rel="noopener noreferrer" 
-                                className="text-gray-400 hover:text-white transition-colors">
-                                Lemon Studio
-                            </a>
-                        </nav>
+                        {/* Projects */}
+                        <div>
+                            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Projects</h3>
+                            <nav className="flex flex-col space-y-1 sm:space-y-2">
+                                <a
+                                    href="https://getmaterial.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base"
+                                >
+                                    GetMaterial
+                                </a>
+                                <a
+                                    href="https://oroom.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base"
+                                >
+                                    OpenRoom
+                                </a>
+                                <a
+                                    href="https://sih-agrovision.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base"
+                                >
+                                    AgroVision
+                                </a>
+                                <a
+                                    href="https://lemonstudio.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white transition-colors text-xs sm:text-base"
+                                >
+                                    Lemon Studio
+                                </a>
+                            </nav>
+                        </div>
                     </div>
 
                     {/* Column 4 - Contact Info */}
                     <div className="col-span-1">
-                        <p className="mb-4">
-                            I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
+                        <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
+                            I'm open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
                         </p>
                         <Link
                             href="mailto:talaganarajesh@gmail.com"
-                            className="text-blue-400 hover:text-blue-300 transition-colors flex items-center"
+                            className="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm sm:text-base"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 mr-2"
+                                className="h-4 w-4 sm:h-5 sm:w-5 mr-1.5 sm:mr-2"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
@@ -97,16 +112,17 @@ const Footer: React.FC = () => {
                             talaganarajesh@gmail.com
                         </Link>
                         <Link href="https://wa.me/+919692544587">
-                            <p className="mt-2 cursor-pointer text-blue-400 hover:text-blue-500 flex flex-row items-center">
-                                <FaPhone className="inline-block mr-3" /> +91 9692544587
+                            <p className="mt-2 cursor-pointer text-blue-400 hover:text-blue-500 flex flex-row items-center text-sm sm:text-base">
+                                <FaPhone className="inline-block mr-1.5 sm:mr-3 text-sm sm:text-base" />
+                                +91 9692544587
                             </p>
                         </Link>
                     </div>
                 </div>
 
                 {/* Copyright */}
-                <div className="pt-8 border-t border-gray-800 text-center md:text-left text-gray-500 text-sm">
-                    <p className="text-center">Copyright © {new Date().getFullYear()} Talagana Rajesh. All rights reserved.</p>
+                <div className="pt-6 sm:pt-8 border-t border-gray-800 text-center text-gray-500 text-xs sm:text-sm">
+                    <p>Copyright © {new Date().getFullYear()} Talagana Rajesh. All rights reserved.</p>
                 </div>
             </div>
         </footer>
