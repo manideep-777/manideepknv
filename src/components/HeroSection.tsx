@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import myPhoto from "/public/myPhoto.jpg";
+import myPhoto from "/public/myphoto.jpg";
 
 export default function HeroSection() {
   return (
