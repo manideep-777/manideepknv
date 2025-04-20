@@ -77,10 +77,6 @@ export default function AboutPage() {
     }
   ];
   
-  
-
-
-
   // Handle scroll events to update active timeline item based on visibility
   useEffect(() => {
     const handleScroll = () => {
@@ -117,17 +113,10 @@ export default function AboutPage() {
     };
   }, [activeTimelineItem]);
 
-
-
-
   const heroRef = useRef<HTMLDivElement | null>(null);
 
-  // Define badgeRefs as an array of refs that refer to HTMLDivElement
-  const badgeRefs = [
-    useRef<HTMLDivElement | null>(null), // I Code
-    useRef<HTMLDivElement | null>(null), // I Lift
-    useRef<HTMLDivElement | null>(null), // I Vibin'
-  ];
+  // Define badgeRefs using useRef only once
+  const badgeRefs = useRef<Array<HTMLDivElement | null>>([null, null, null]);
 
   const [constraints, setConstraints] = useState<{
     left: number;
@@ -142,6 +131,7 @@ export default function AboutPage() {
     { x: 0, y: 0 }, // I Vibin'
   ]);
 
+  // Fix the useEffect with badgeRefs
   useEffect(() => {
     const updateLayout = () => {
       if (heroRef.current) {
@@ -155,8 +145,8 @@ export default function AboutPage() {
         setConstraints(newConstraints);
 
         // Calculate positions for the badges side by side
-        const newPositions = badgeRefs.map((ref, index) => {
-          const badgeRect = ref.current?.getBoundingClientRect() || { width: 100, height: 40 };
+        const newPositions = badgeRefs.current.map((ref, index) => {
+          const badgeRect = ref?.getBoundingClientRect() || { width: 100, height: 40 };
 
           // Set the y position to be the same for all badges (center vertically)
           const yPosition = (heroRect.height - badgeRect.height) / 2;
@@ -175,16 +165,13 @@ export default function AboutPage() {
     updateLayout();
     window.addEventListener("resize", updateLayout);
     return () => window.removeEventListener("resize", updateLayout);
-  }, []);
+  }, []); // No dependencies needed as we're using useRef properly now
 
   const badgeData = [
     { label: "I Lift", color: "emerald" },
     { label: "I Code", color: "purple" },
-    { label: "I Vibin'", color: "blue" },
+    { label: "I Vibin&apos;", color: "blue" },
   ];
-
-
-
 
   return (
     <div className="bg-black min-h-screen text-white pt-32">
@@ -209,13 +196,13 @@ export default function AboutPage() {
         >
           <div className="lg:w-2/3">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Hi there! I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Rajesh</span>
+              Hi there! I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Rajesh</span>
             </h1>
 
             <div className="space-y-4 text-gray-300">
-              <p>I'm Talagana Rajesh, a passionate web developer dedicated to building impactful and user-friendly websites. I specialize in React, Next.js and modern frontend technologies, and I'm constantly exploring AI and machine learning to integrate into web solutions.</p>
+              <p>I&apos;m Talagana Rajesh, a passionate web developer dedicated to building impactful and user-friendly websites. I specialize in React, Next.js and modern frontend technologies, and I&apos;m constantly exploring AI and machine learning to integrate into web solutions.</p>
 
-              <p>When I'm not coding, I'm brainstorming new ideas, learning emerging tech, or helping others grow. I believe in consistency, curiosity, and leveling up every day.</p>
+              <p>When I&apos;m not coding, I&apos;m brainstorming new ideas, learning emerging tech, or helping others grow. I believe in consistency, curiosity, and leveling up every day.</p>
 
               <p>I wake up each day excited to build something meaningful and work towards becoming a top developer!</p>
 
@@ -234,8 +221,6 @@ export default function AboutPage() {
                 </Link>
               </div>
             </div>
-
-
           </div>
 
           <motion.div
@@ -260,7 +245,6 @@ export default function AboutPage() {
           </motion.div>
         </motion.div>
 
-
         {/* Draggable Badges - Side by Side */}
         {badgeData.map((badge, index) => (
           <motion.div
@@ -269,7 +253,9 @@ export default function AboutPage() {
             dragConstraints={constraints}
             dragElastic={0.2}
             dragMomentum={true}
-            ref={badgeRefs[index]}
+            ref={(el) => {
+              badgeRefs.current[index] = el;
+            }}
             style={{
               x: positions[index]?.x ?? 0, // Check if position is available, fallback to 0 if not
               y: positions[index]?.y ?? 0,
@@ -286,8 +272,6 @@ export default function AboutPage() {
             </div>
           </motion.div>
         ))}
-
-
       </section>
 
       {/* Experience Section */}
@@ -384,7 +368,6 @@ export default function AboutPage() {
                         </motion.div>
                       ))}
                     </div>
-
 
                     {/* Skills */}
                     <div className="mt-6">
