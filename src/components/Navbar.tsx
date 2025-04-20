@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
-import { useRouter } from 'next/navigation';
 import { Menu, X } from "lucide-react"; // icon package
 
 interface NavItem {
@@ -33,9 +32,9 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
     const currentPath = pathname;
     const active = navItems.find((item) => item.url === currentPath)?.name || navItems[0].name;
     setActiveItem(active);
-  }, [pathname]);
+  }, [pathname, navItems]);
 
-  const router = useRouter();
+  // Removed unused router variable
   const pathnameLogo = usePathname();
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

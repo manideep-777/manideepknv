@@ -97,29 +97,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
   );
 };
 
-// Sample files for Marquee component
-const files = [
-  {
-    name: "project1.js",
-    body: "React-based e-commerce platform with cart functionality and payment gateway integration.",
-  },
-  {
-    name: "portfolio.jsx",
-    body: "Personal portfolio website showcasing projects and skills using React and Tailwind CSS.",
-  },
-  {
-    name: "dashboard.tsx",
-    body: "Admin dashboard with analytics, user management, and content moderation features.",
-  },
-  {
-    name: "api.js",
-    body: "RESTful API implementation with authentication, authorization, and data validation.",
-  },
-  {
-    name: "components.jsx",
-    body: "Reusable UI component library with customizable styling and responsive design.",
-  },
-];
+
 
 // Skill icons for the tech enthusiast card
 const slugs = [

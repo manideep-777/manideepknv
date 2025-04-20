@@ -62,7 +62,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <p className="text-xl text-white/90">Hello, I'm
+          <p className="text-xl text-white/90">Hello, I&apos;m
             <span
               className="px-5 py-1 text-white bg-purple-700 inline-block"
               style={{
@@ -108,7 +108,7 @@ export default function HeroSection() {
         >
           {/* Let's Connect Button */}
           <Link href="/contact" className="group flex items-center gap-2 px-6 py-4 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-zinc-400 hover:bg-black/50 transition-colors">
-            <span className="text-lg font-medium">Let's Connect</span>
+            <span className="text-lg font-medium">Let&apos;s Connect</span>
             <div className="h-8 w-8 rounded-full bg-zinc-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:translate-x-2 transition-all duration-300 ease-in-out">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
