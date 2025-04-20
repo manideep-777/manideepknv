@@ -1,16 +1,18 @@
 'use client';
 
-// components/WorkShowcase.tsx
+// components/WorkShowcaseSnapping.tsx
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { StaticImageData } from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
 
 import GetMaterialImage from '/public/assets/getmaterial.png';
 import LemonStudioImage from '/public/assets/lemonstudio.png';
 import OpenRoomImage from '/public/assets/openroom-image.png';
 import AgroVisionImage from '/public/assets/agrovision.png';
 import PortfolioImage from '/public/assets/portfolio.png';
+import WebCrosImage from '/public/assets/web-cros.png';
 
 import cloudflare from '/public/assets/cloudflare.png';
 import emailjs from '/public/assets/emailjs.jpeg';
@@ -29,10 +31,12 @@ import typescript from '/public/assets/typescript.svg';
 import shadcn from '/public/assets/shadcn.png';
 import framer from '/public/assets/framermotion.png';
 
-import { ArrowRight } from 'lucide-react';
+
+import { ArrowBigLeft, ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
+  link: string;
   title: string;
   description: string;
   tagline: string;
@@ -46,7 +50,7 @@ interface Project {
   bgGradient: string;
 }
 
-export default function WorkShowcase() {
+export default function WorkShowcaseSnapping() {
   const [activeProject, setActiveProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
@@ -55,6 +59,7 @@ export default function WorkShowcase() {
   const projects: Project[] = [
     {
       id: 1,
+      link: "https://getmaterial.vercel.app/",
       title: "GetMaterial",
       tagline: "A collaborative note-sharing platform built for students, by students.",
       description: "Developed a centralized hub where students can upload, discover, and access academic notes, fostering a peer-driven learning ecosystem.",
@@ -64,8 +69,8 @@ export default function WorkShowcase() {
         { name: "Firebase", icon: firebase },
         { name: "Express.js", icon: expressjs },
         { name: "Cloudflare", icon: cloudflare },
-        {name : "Rest API", icon: restapi},
-        {name : "Email js", icon: emailjs},
+        { name: "Rest API", icon: restapi },
+        { name: "Email js", icon: emailjs },
         { name: "Tailwind CSS", icon: tailwindcss }
       ],
       features: [
@@ -82,6 +87,7 @@ export default function WorkShowcase() {
     },
     {
       id: 2,
+      link: "https://lemonstudio.vercel.app/",
       title: "Lemon Studio",
       tagline: "Portfolio website for a photography studio with service showcase.",
       description: "Designed a visually striking and user-friendly photography portfolio website for a client, showcasing their work, services, and contact options.",
@@ -105,6 +111,7 @@ export default function WorkShowcase() {
 
     {
       id: 3,
+      link: "https://talaganarajesh.vercel.app/",
       title: "Portfolio",
       tagline: "Dynamic and interactive portfolio showcasing my work and skills.",
       description:
@@ -127,15 +134,16 @@ export default function WorkShowcase() {
       accentColor: "bg-cyan-500",
       bgGradient: "from-cyan-800 to-cyan-600"
     },
-    
+
     {
       id: 4,
+      link: "https://oroom.vercel.app/",
       title: "OpenRoom",
       tagline: "Anonymous real-time chat with AI replies, threading, and safe moderation",
       description: "Developed a platform allowing users to engage in anonymous chats, with real-time messaging, AI-powered responses, and secure, moderated threads for safe interactions.",
       techStack: [
         { name: "React", icon: react },
-        {name :"Gemini API", icon: gemini},
+        { name: "Gemini API", icon: gemini },
         { name: "Node.js", icon: nodejs },
         { name: "API", icon: restapi },
         { name: "Firebase", icon: firebase },
@@ -155,14 +163,41 @@ export default function WorkShowcase() {
 
     {
       id: 5,
+      link: "https://webcros.vercel.app/",
+      title: "WebCros",
+      tagline: "Professional web development services tailored for clients.",
+      description: "Launched a modern agency platform that offers custom website solutions for businesses and individuals, focusing on performance, design, and client satisfaction.",
+      techStack: [
+        { name: "Next.js", icon: nextjs },
+        { name: "React", icon: react },
+        { name: "Tailwind CSS", icon: tailwindcss },
+        { name: "Framer Motion", icon: framermotion },
+        { name: "EmailJS", icon: emailjs }
+      ],
+      features: [
+        "Agency-style landing page with sleek design and animations",
+        "Showcases client work, pricing, and services clearly",
+        "Responsive contact form with automated email handling",
+        "Optimized for mobile and desktop with smooth interactions",
+        "Built with reusability and scalability in mind"
+      ],
+      image: WebCrosImage,
+      accentColor: "bg-teal-500",
+      bgGradient: "from-teal-800 to-teal-600"
+    },
+
+
+    {
+      id: 6,
+      link: "https://agrovision-sih.vercel.app/",
       title: "AgroVision",
       tagline: "AI-powered crop disease detection and farmer support platform.",
       description: "Built a smart agricultural assistant that uses AI to detect crop diseases and provides actionable insights for farmers with a chatbot interface.",
       techStack: [
         { name: "React", icon: react },
         { name: "Python", icon: python },
-        { name: "Tailwind CSS", icon:  tailwindcss },
-        { name: "API", icon:  restapi },
+        { name: "Tailwind CSS", icon: tailwindcss },
+        { name: "API", icon: restapi },
       ],
       features: [
         "Integrated AI model to detect crop diseases from images",
@@ -207,7 +242,7 @@ export default function WorkShowcase() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -218,15 +253,27 @@ export default function WorkShowcase() {
       ref={componentRef}
       className="bg-black pt-32 w-full text-white"
     >
-      <div className="pt-10 px-4 md:px-10 max-w-7xl mx-auto">
-        <div className="text-center">
-          <h2 className="text-gray-300 uppercase tracking-wider font-medium text-sm mb-2">
+      <div className="pt-5 px-4 md:px-10 max-w-7xl mx-auto">
+        <div className="text-center mb-5">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+            className="text-gray-300 uppercase tracking-wider font-medium text-sm mb-2"
+          >
             Code Meets Creativity
-          </h2>
-          <div className="text-5xl md:text-6xl font-bold">
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: false }}
+            className="text-5xl md:text-6xl font-bold"
+          >
             <span className="text-white">Crafted </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Projects</span>
-          </div>
+          </motion.div>
         </div>
 
         <div className="relative">
@@ -237,6 +284,7 @@ export default function WorkShowcase() {
                 const isHovered = hoveredProject === index;
 
                 return (
+
                   <div
                     key={project.id}
                     ref={el => {
@@ -246,28 +294,45 @@ export default function WorkShowcase() {
                     onMouseEnter={() => setHoveredProject(index)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
-                    <div className="w-full cursor-pointer">
-                      <div className={`bg-gradient-to-b ${project.bgGradient} overflow-hidden rounded-3xl px-8 pt-10 flex flex-col`}>
-                        <div className="text-white flex flex-row text-2xl font-bold mb-6">
-                          {project.tagline}
+                    <Link href={`${project.link}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
 
-                          <div className="">
-                            {isHovered && (
-                              <div className="flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-6 py-3">
+                      <motion.div
+                        whileHover={{
+                          scale: 1.02,
+                          transition: { duration: 0.3 }
+                        }}
+                        className="w-full cursor-pointer"
+                      >
+                        <div className={`bg-gradient-to-b ${project.bgGradient} overflow-hidden rounded-3xl px-8 pt-10 flex flex-col`}>
+                          <div className="text-white flex flex-row text-2xl font-bold mb-6">
+                            {project.tagline}
+
+                            <div
+                              className="ml-auto flex items-center justify-center">
+                              <motion.div
+                                className="flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-6 py-3"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: isHovered ? 1 : 0 }}
+                                transition={{ duration: 0.3 }}
+                              >
                                 <ArrowRight className="w-5 h-5" />
-                              </div>
-                            )}
+                              </motion.div>
+                            </div>
+                          </div>
+
+                          <div className={`relative h-80 w-full overflow-hidden transition-transform duration-300 rounded-xl mt-4 group ${isHovered ? 'scale-110 -rotate-5' : 'scale-100'} `}>
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                            />
                           </div>
                         </div>
+                      </motion.div>
 
-                        <div className="relative h-80 w-full overflow-hidden rounded-xl mt-4">
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    </Link>
                   </div>
                 );
               })}

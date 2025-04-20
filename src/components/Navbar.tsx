@@ -49,7 +49,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
 
   return (
     <div className={cn(
-      "fixed top-2 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-screen-lg px-4",
+      "fixed top-2 left-1/2 backdrop-blur-sm rounded-full -translate-x-1/2 z-50 pt-4 w-full max-w-screen-lg px-5",
       className
     )}>
       <div className="flex items-center justify-between">
