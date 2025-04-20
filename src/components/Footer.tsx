@@ -94,8 +94,9 @@ const Footer: React.FC = () => {
                     {/* Column 4 - Contact Info */}
                     <div className="col-span-1">
                         <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
-                            I'm open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
+                            I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
                         </p>
+
                         <Link
                             href="mailto:talaganarajesh@gmail.com"
                             className="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm sm:text-base"
