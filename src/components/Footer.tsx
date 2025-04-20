@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import React from 'react';
 import Link from 'next/link';
-import { FaLinkedin, FaGithub, FaTwitter, FaMedium, FaWhatsapp, FaPhone } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (

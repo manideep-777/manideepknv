@@ -1,14 +1,11 @@
 import React from 'react';
-import { BellIcon, Share2Icon } from "lucide-react";
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { AnimatedList } from "@/components/magicui/animated-list";
 import { Globe } from "@/components/magicui/globe";
 import { IconCloud } from "@/components/magicui/icon-cloud";
 
 
 // BentoGrid component following MagicUI structure
-const BentoGrid = ({ className, children }) => {
+const BentoGrid: React.FC<{ className?: string; children: React.ReactNode }> = ({ className, children }) => {
   return (
     <div className={cn("grid grid-cols-1 md:grid-cols-12 gap-4 p-4 mx-auto max-w-7xl", className)}>
       {children}
@@ -17,7 +14,19 @@ const BentoGrid = ({ className, children }) => {
 };
 
 // BentoCard component following MagicUI structure
-const BentoCard = ({
+interface BentoCardProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  className?: string;
+  background?: React.ReactNode;
+  cta?: string;
+  href?: string;
+  email?: string;
+}
+
+const BentoCard: React.FC<BentoCardProps> = ({
   title,
   subtitle,
   description,
