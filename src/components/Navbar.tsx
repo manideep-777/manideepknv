@@ -77,7 +77,7 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
         className
       )}
     >
-      <div className="flex backdrop-blur-sm md:py-0 md:backdrop-blur-none py-2 items-center justify-between">
+      <div className="flex backdrop-blur-sm md:py-0 md:backdrop-blur-none py-4 items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="text-2xl w-24 font-bold">
           <div className="flex items-center">

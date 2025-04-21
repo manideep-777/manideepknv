@@ -22,7 +22,6 @@ function MovingStars() {
       count={5000}
       factor={4}
       saturation={0}
-      fade
       speed={1}
     />
   );

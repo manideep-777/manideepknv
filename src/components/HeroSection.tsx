@@ -10,7 +10,7 @@ import myPhoto from "/public/myphoto.jpg";
 
 export default function HeroSection() {
   return (
-    <div className="flex md:min-h-screen w-full h-full flex-col items-center justify-center px-4 overflow-hidden">
+    <div className="flex  min-h-[100svh] md:min-h-screen w-full h-full flex-col items-center justify-center px-4 overflow-hidden">
       {/* Background gradient */}
 
       <div className="absolute inset-0 bg-black/60 z-0">
@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-52 md:h-32 bg-black/90 rounded-t-[100%] z-0"></div>
 
       {/* Content container */}
-      <div className="container mx-auto max-w-6xl flex flex-col justify-center items-center z-10 mt-24">
+      <div className="container mx-auto max-w-6xl flex flex-col justify-center items-center z-10 mt-14 md:mt-24">
         {/* Announcement banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,12 +46,12 @@ export default function HeroSection() {
 
         {/* Main Headline */}
         <motion.div
-          className="text-center mb-10 px-2"
+          className="text-center mb-16 md:mb-10 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h1 className="text-2xl sm:text-4xl md:text-7xl font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight">
             Turning thoughts into<br />
             beautiful <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-b from-zinc-600 to-white">
               web stories
