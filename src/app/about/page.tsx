@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 // Import social icons
-import profileImage from '/public/myphoto.jpg'; // Replace with your actual image path
+import profileImage from '/public/talaganaRajesh.jpg'; // Replace with your actual image path
 
 interface TimelineItem {
   id: number;
@@ -209,12 +209,15 @@ export default function AboutPage() {
               <div className="rounded-xl overflow-hidden aspect-square">
                 <Image
                   src={profileImage}
-                  alt="T Rajesh"
+                  alt="Talagana Rajesh"
                   width={400}
                   height={400}
                   className="w-full h-full object-cover"
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEtAJJUw8YhgAAAABJRU5ErkJggg=="
+                  loading="eager"
+                  priority
+
                 />
               </div>
             </div>

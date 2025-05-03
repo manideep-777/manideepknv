@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Talagana Rajesh-Full stack web developer",
   authors: [{ name: "Talagana Rajesh" }],
   description: "Portfolio website of Talagana Rajesh-Founder of Get Material",
-  icons: "/myphoto.jpg",
+  icons: "/talaganaRajesh.jpg",
   keywords: [
     "Talagana Rajesh",
     "Portfolio",
@@ -63,6 +63,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Structured Data for Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Talagana Rajesh",
+              image: "https://talaganarajesh.vercel.app/talagana-rajesh-web-developer.jpg",
+              jobTitle: "Website Developer",
+              url: "https://talaganarajesh.vercel.app/",
+              sameAs: [
+                "https://www.linkedin.com/in/talaganaRajesh",
+                "https://github.com/talaganaRajesh",
+                "https://x.com/Rajeshtalagana"
+                
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Pass items to NavBar */}
         <NavBar />
