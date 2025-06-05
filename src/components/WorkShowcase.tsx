@@ -13,6 +13,7 @@ import OpenRoomImage from '/public/assets/openroom-image.png';
 import AgroVisionImage from '/public/assets/agrovision.png';
 import PortfolioImage from '/public/assets/portfolio.png';
 import WebCrosImage from '/public/assets/web-cros.png';
+import DealsOfAgroImage from '/public/assets/DealsOfAgroImage.png'
 
 import cloudflare from '/public/assets/cloudflare.png';
 import emailjs from '/public/assets/emailjs.jpeg';
@@ -109,7 +110,34 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 3,
+  id: 3,
+  link: "https://dealsofagro.vercel.app/",
+  title: "DealsOfAgro",
+  tagline: "E-commerce website for selling agricultural machinery online.",
+  description: "Developed a full-fledged online marketplace for an agricultural machinery company during an internship. The platform allows sellers to list equipment and enables farmers to browse, explore, and purchase machinery with ease. Focused on user-friendly design, performance, and real-time database integration.",
+  techStack: [
+    { name: "Next.js", icon: nextjs },
+    { name: "Tailwind CSS", icon: tailwindcss },
+    { name: "TypeScript", icon: typescript },
+    { name: "Firebase", icon: firebase },
+  ],
+  features: [
+    "Product listing and detailed pages with real-time data from Firebase",
+    "Secure user authentication and dynamic routing with Next.js",
+    "Interactive and responsive UI tailored for farmers and sellers",
+    "Admin features for product management and inventory control",
+    "Designed UI prototypes using Figma before development"
+  ],
+  image: DealsOfAgroImage,
+  accentColor: "bg-green-600",
+  bgGradient: "from-green-700 to-lime-600"
+}
+,
+
+
+
+    {
+      id: 4,
       link: "https://talaganarajesh.vercel.app/",
       title: "Portfolio",
       tagline: "Dynamic and interactive portfolio showcasing my work and skills.",
@@ -135,7 +163,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 4,
+      id: 5,
       link: "https://oroom.vercel.app/",
       title: "OpenRoom",
       tagline: "Anonymous real-time chat with AI replies, threading, and safe moderation",
@@ -161,7 +189,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 5,
+      id: 6,
       link: "https://webcros.vercel.app/",
       title: "WebCros",
       tagline: "Professional web development services tailored for clients.",
@@ -187,7 +215,7 @@ export default function WorkShowcaseSnapping() {
 
 
     {
-      id: 6,
+      id: 7,
       link: "https://agrovision-sih.vercel.app/",
       title: "AgroVision",
       tagline: "AI-powered crop disease detection and farmer support platform.",

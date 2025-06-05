@@ -19,11 +19,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Talagana Rajesh-Full stack web developer",
   authors: [{ name: "Talagana Rajesh" }],
-  description: "Portfolio website of Talagana Rajesh-Founder of Get Material",
+  description: "Portfolio website of Talagana Rajesh-Founder of Get Material NIST notes",
   icons: "/talaganaRajesh.jpg",
   keywords: [
     "Talagana Rajesh",
     "Portfolio",
+    "Web developer near me",
     "Full stack web developer",
     "Full stack developer in NIST",
     "Get Material",
@@ -52,6 +53,14 @@ export const metadata: Metadata = {
     "Talagana Rajesh nist",
     "Talagana Rajesh Get Material",
     "Talagana Rajesh berhampur",
+    "Website developers",
+    "Website developers in berhampur",
+    "Website developers in india",
+    "Near by website developers",
+    "Best website developers",
+    "Best full stack developers",
+    "Need a web developer",
+    "Freelance web developer"
   ],
 };
 
@@ -72,7 +81,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Talagana Rajesh",
-              image: "https://talaganarajesh.vercel.app/talagana-rajesh-web-developer.jpg",
+              image: "https://talaganarajesh.vercel.app/talaganaRajesh.jpg",
               jobTitle: "Website Developer",
               url: "https://talaganarajesh.vercel.app/",
               sameAs: [
