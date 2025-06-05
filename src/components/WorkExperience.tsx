@@ -1,14 +1,26 @@
 'use client'
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Code, Calendar, MapPin, ExternalLink, Tractor, ShoppingCart, Database, Globe, Users, Zap, ArrowRight, Building2 } from 'lucide-react';
+import {
+  Code,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  Tractor,
+  Database,
+  Globe,
+  Users,
+  Zap,
+  ArrowRight,
+  Building2
+} from 'lucide-react';
 import Image from 'next/image';
-import DOALogo from '/public/assets/DOA-whiteLogo.png'
+import DOALogo from '/public/assets/DOA-whiteLogo.png';
 
 import ss3 from '/public/assets/DOA-ss1.png';
 import ss2 from '/public/assets/DOA-ss2.png';
-import ss1 from '/public/assets/DealsOfAgroImage.png'
+import ss1 from '/public/assets/DealsOfAgroImage.png';
 
 import Link from 'next/link';
 import type { StaticImageData } from 'next/image';
@@ -55,8 +67,6 @@ const workData: WorkExperience = {
 };
 
 const WorkExperience: React.FC = () => {
-  const [activeScreenshot, setActiveScreenshot] = useState(0);
-
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -114,7 +124,6 @@ const WorkExperience: React.FC = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
               <div className="relative bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all duration-300">
-
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 sm:mb-8">
                   <div className="flex items-center mb-4 lg:mb-0">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-900 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -139,9 +148,7 @@ const WorkExperience: React.FC = () => {
 
                 <div className="mb-6 sm:mb-8">
                   <p className="text-sm sm:text-lg text-gray-300 leading-relaxed mb-4">
-                    At DealsOfAgro, I'm pioneering the development of a comprehensive e-commerce platform that's
-                    transforming how farmers across Odisha access and purchase agricultural machinery, creating
-                    a digital bridge between technology and traditional farming.
+                    At DealsOfAgro, I’m pioneering the development of a comprehensive e-commerce platform that’s transforming how farmers across Odisha access and purchase agricultural machinery — creating a digital bridge between technology and traditional farming.
                   </p>
                 </div>
 
@@ -211,7 +218,6 @@ const WorkExperience: React.FC = () => {
                         whileHover={{ scale: 1.01, y: -1 }}
                         transition={{ duration: 0.3 }}
                         className="relative group cursor-pointer"
-                        onClick={() => setActiveScreenshot(index)}
                       >
                         <div className="absolute -inset-1 bg-gradient-to-r from-zinc-600 to-zinc-500 rounded-lg blur opacity-10 group-hover:opacity-20 transition duration-300"></div>
                         <div className="relative bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 aspect-video">
@@ -248,7 +254,7 @@ const WorkExperience: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-center mt-24 sm:mt-56"
+          className="text-center mt-14 sm:mt-16"
         >
           <div className="relative group inline-block">
             <div className="absolute -inset-1 bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 rounded-xl blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
@@ -257,15 +263,15 @@ const WorkExperience: React.FC = () => {
                 Ready to build something amazing together?
               </h3>
               <p className="text-sm sm:text-base text-gray-400 mb-5 sm:mb-6 max-w-md mx-auto">
-                I'm passionate about creating technology solutions that make a real difference in people's lives.
+                I’m passionate about creating technology solutions that make a real difference in people’s lives.
               </p>
               <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-700 to-pink-700 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 group text-sm sm:text-base"
+                  className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 group text-sm sm:text-base"
                 >
-                  Let's Collaborate
+                  Let’s Collaborate
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
