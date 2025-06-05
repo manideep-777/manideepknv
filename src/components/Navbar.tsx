@@ -27,7 +27,8 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
     { name: "Home", url: "/" },
     { name: "Projects", url: "/projects" },
     { name: "About", url: "/about" },
-    { name: "Contact", url: "/contact" },
+    {name :"Experience", url:"/experience"},
+    { name: "Contact", url: "/contact" }
   ];
 
   useEffect(() => {
