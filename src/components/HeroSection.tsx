@@ -31,7 +31,7 @@ export default function HeroSection() {
           className="mb-5 md:mb-12 w-full px-2 flex justify-center"
         >
           <a
-            href="https://getmaterial.vercel.app/"
+            href="https://heydrop.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/50 transition-colors text-sm md:text-base"

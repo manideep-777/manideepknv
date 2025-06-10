@@ -13,7 +13,8 @@ import OpenRoomImage from '/public/assets/openroom-image.png';
 import AgroVisionImage from '/public/assets/agrovision.png';
 import PortfolioImage from '/public/assets/portfolio.png';
 import WebCrosImage from '/public/assets/web-cros.png';
-import DealsOfAgroImage from '/public/assets/DealsOfAgroImage.png'
+import DealsOfAgroImage from '/public/assets/DealsOfAgroImage.png';
+import HeyDropImage from '/public/assets/HeyDrop.png';
 
 import cloudflare from '/public/assets/cloudflare.png';
 import emailjs from '/public/assets/emailjs.jpeg';
@@ -30,6 +31,8 @@ import gemini from '/public/assets/gemini.webp';
 import typescript from '/public/assets/typescript.svg';
 import shadcn from '/public/assets/shadcn.png';
 import framer from '/public/assets/framermotion.png';
+import upstash from '/public/assets/upstash.png';
+import uploadthing from '/public/assets/uploadthing.png';
 
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -86,7 +89,33 @@ export default function WorkShowcaseSnapping() {
       bgGradient: "from-green-800 to-green-600"
     },
     {
-      id: 2,
+  id: 2,
+  link: "https://heydrop.vercel.app/",
+  title: "HeyDrop",
+  tagline: "Share Anything Instantly – Files, Images, and Text with No Login.",
+  description: "HeyDrop is a seamless real-world web app that enables instant, login-free sharing of files, images, and messages via unique room links. Built for frictionless transfer across devices without installing any app or creating an account.",
+  techStack: [
+    { name: "Next.js", icon: nextjs },
+    { name: "TypeScript", icon: typescript },
+    { name: "Tailwind CSS", icon: tailwindcss },
+    { name: "Upstash Redis", icon: upstash },
+    { name: "UploadThing", icon: uploadthing },
+    { name: "React", icon: react },
+  ],
+  features: [
+    "Instant file, image, and text sharing across devices",
+    "No login, sign-up, or installation required",
+    "Generate secure, sharable room links for temporary sessions",
+    "Real-time message syncing using Upstash Redis",
+    "Secure file handling and upload with UploadThing",
+  ],
+  image: HeyDropImage, // Replace this with your imported image reference
+  accentColor: "bg-orange-500",
+  bgGradient: "from-zinc-950 to-orange-400"
+}
+,
+    {
+      id: 3,
       link: "https://lemonstudio.vercel.app/",
       title: "Lemon Studio",
       tagline: "Portfolio website for a photography studio with service showcase.",
@@ -110,7 +139,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-  id: 3,
+  id: 4,
   link: "https://dealsofagro.vercel.app/",
   title: "DealsOfAgro",
   tagline: "E-commerce website for selling agricultural machinery online.",
@@ -137,7 +166,7 @@ export default function WorkShowcaseSnapping() {
 
 
     {
-      id: 4,
+      id: 5,
       link: "https://talaganarajesh.vercel.app/",
       title: "Portfolio",
       tagline: "Dynamic and interactive portfolio showcasing my work and skills.",
@@ -163,7 +192,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 5,
+      id: 6,
       link: "https://oroom.vercel.app/",
       title: "OpenRoom",
       tagline: "Anonymous real-time chat with AI replies, threading, and safe moderation",
@@ -189,7 +218,7 @@ export default function WorkShowcaseSnapping() {
     },
 
     {
-      id: 6,
+      id: 7,
       link: "https://webcros.vercel.app/",
       title: "WebCros",
       tagline: "Professional web development services tailored for clients.",
@@ -215,7 +244,7 @@ export default function WorkShowcaseSnapping() {
 
 
     {
-      id: 7,
+      id: 8,
       link: "https://agrovision-sih.vercel.app/",
       title: "AgroVision",
       tagline: "AI-powered crop disease detection and farmer support platform.",
