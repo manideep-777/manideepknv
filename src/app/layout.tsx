@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     "talagana rajesh",
     "Rajesh Talagana",
     "Rajesh Talagana portfolio",
-    "telangana rajesh",
-    "telangana rajesh portfolio",
     "Rajesh",
     "Rajesh portfolio",
     "Rajesh portfolio website",
@@ -135,8 +133,8 @@ export default function RootLayout({
               sameAs: [
                 "https://www.linkedin.com/in/talaganaRajesh",
                 "https://github.com/talaganaRajesh",
-                "https://x.com/Rajeshtalagana"
-                
+                "https://x.com/talaganaRajesh",
+                "https://www.instagram.com/talagana.rajesh/"
               ]
             })
           }}
