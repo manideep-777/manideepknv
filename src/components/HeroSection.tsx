@@ -89,7 +89,7 @@ export default function HeroSection() {
 
               {/* Hover Popup */}
               <div
-                className="absolute rounded-full -top-12 sm:-top-16 md:-top-20 lg:-top-24 left-1/2 ml-0 -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out
+                className="absolute rounded-full -top-12 sm:-top-16 md:-top-20 lg:-top-16 left-1/2 ml-7 -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out
                  border border-white/30 shadow-lg overflow-hidden z-10"
               >
                 <Image
