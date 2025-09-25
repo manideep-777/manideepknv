@@ -25,7 +25,47 @@ glowColor: [1, 1, 1],                 // Blue (#0000FF)
 
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
-    { location: [19.076, 72.8777], size: 0.1 },
+    
+    // India Border Outline - Major border points
+    // Northern Border (Pakistan/China border)
+    { location: [34.5, 74.5], size: 0.02 },      // Kashmir region
+    { location: [32.0, 76.0], size: 0.02 },      // Himachal Pradesh
+    { location: [30.0, 78.0], size: 0.02 },      // Uttarakhand
+    { location: [28.5, 80.5], size: 0.02 },      // Nepal border
+    { location: [27.0, 88.0], size: 0.02 },      // Sikkim/Bhutan
+    { location: [26.0, 91.5], size: 0.02 },      // Assam
+    { location: [25.5, 94.0], size: 0.02 },      // Arunachal Pradesh
+    
+    // Eastern Border (Myanmar/Bangladesh)
+    { location: [24.0, 93.5], size: 0.02 },      // Manipur
+    { location: [23.0, 92.5], size: 0.02 },      // Mizoram
+    { location: [22.0, 91.0], size: 0.02 },      // Bangladesh border
+    { location: [21.0, 89.0], size: 0.02 },      // West Bengal
+    
+    // Southern Coast
+    { location: [20.0, 86.0], size: 0.02 },      // Odisha coast
+    { location: [17.0, 82.0], size: 0.02 },      // Andhra Pradesh
+    { location: [13.0, 80.0], size: 0.02 },      // Tamil Nadu
+    { location: [10.0, 77.0], size: 0.02 },      // Kerala
+    { location: [8.0, 77.0], size: 0.02 },       // Kanyakumari
+    
+    // Western Coast
+    { location: [12.0, 75.0], size: 0.02 },      // Karnataka coast
+    { location: [15.0, 74.0], size: 0.02 },      // Goa
+    { location: [18.0, 73.0], size: 0.02 },      // Maharashtra coast
+    { location: [20.0, 70.0], size: 0.02 },      // Gujarat coast
+    { location: [23.0, 68.0], size: 0.02 },      // Gujarat-Pakistan border
+    { location: [25.0, 70.0], size: 0.02 },      // Rajasthan
+    { location: [28.0, 70.0], size: 0.02 },      // Punjab border
+    
+    // Major Cities (larger markers)
+    { location: [19.076, 72.8777], size: 0.08 },    // Mumbai
+    { location: [28.6139, 77.2090], size: 0.08 },   // New Delhi
+    { location: [12.9716, 77.5946], size: 0.06 },   // Bangalore
+    { location: [13.0827, 80.2707], size: 0.06 },   // Chennai
+    { location: [22.5726, 88.3639], size: 0.06 },   // Kolkata
+    
+    // Other countries (existing markers)
     { location: [23.8103, 90.4125], size: 0.05 },
     { location: [30.0444, 31.2357], size: 0.07 },
     { location: [39.9042, 116.4074], size: 0.08 },

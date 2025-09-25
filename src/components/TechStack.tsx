@@ -5,59 +5,8 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import html from '/public/assets/html.webp';
-import css from '/public/assets/css.svg';
-import javascript from '/public/assets/javascript.webp';
-import typescript from '/public/assets/typescript.svg';
-import react from '/public/assets/react.png';
-import nextjs from '/public/assets/nextjs.png';
-import tailwindcss from '/public/assets/tailwindcss.png';
-import framermotion from '/public/assets/framermotion.png';
-import shadcn from '/public/assets/shadcn.png';
-import nodejs from '/public/assets/nodejs.png';
-import expressjs from '/public/assets/expressjs.png';
-import mongodb from '/public/assets/mongodb.png';
-import sql from '/public/assets/sql.webp';
-import github from '/public/assets/github.png';
-import vercel from '/public/assets/vercel.png';
-import postman from '/public/assets/postman.webp';
-import java from '/public/assets/java.webp';
-import npm from '/public/assets/npm.webp';
-import figma from '/public/assets/figma.png';
-import firebase from '/public/assets/firebase.webp';
-import restapi from '/public/assets/restapi.webp';
-import python from '/public/assets/python.png';
-
-// Tech stack images
-interface TechItem {
-    name: string;
-    icon: string;
-}
-
-const techStack: TechItem[] = [
-    { name: 'HTML', icon: html },
-    { name: 'CSS', icon: css },
-    { name: 'JavaScript', icon: javascript },
-    { name: 'TypeScript', icon: typescript },
-    { name: 'ReactJS', icon: react },
-    { name: 'NextJS', icon: nextjs },
-    { name: 'Tailwind CSS', icon: tailwindcss },
-    { name: 'Framer Motion', icon: framermotion },
-    { name: 'Shadcn', icon: shadcn },
-    { name: 'NodeJS', icon: nodejs },
-    { name: 'ExpressJS', icon: expressjs },
-    { name: 'MongoDB', icon: mongodb },
-    { name: 'SQL', icon: sql },
-    { name: 'GitHub', icon: github },
-    { name: 'Vercel', icon: vercel },
-    { name: 'Postman', icon: postman },
-    { name: 'Java', icon: java },
-    { name: 'npm', icon: npm },
-    { name: 'Figma', icon: figma },
-    { name: 'Firebase', icon: firebase },
-    { name: 'REST API', icon: restapi },
-    { name: 'Python', icon: python },
-]
+// Import your tech stack data from data.ts
+import { techStack } from '../lib/data'
 
 const TechStack: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);

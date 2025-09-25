@@ -3,6 +3,9 @@ import { cn } from "@/lib/utils";
 import { Globe } from "@/components/magicui/globe";
 import { IconCloud } from "@/components/magicui/icon-cloud";
 
+// Feature cards data for the bottom section importing from data.ts
+import {featureCards} from '../lib/data'
+
 
 // BentoGrid component following MagicUI structure
 const BentoGrid: React.FC<{ className?: string; children: React.ReactNode }> = ({ className, children }) => {
@@ -121,34 +124,6 @@ const images = slugs.map(
   (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
 );
 
-// Feature cards for the bottom section
-const featureCards = [
-  {
-    title: "Project Planning & Strategy",
-    description: "I work closely with clients to define clear goals and develop a strategic roadmap for each project."
-  },
-  {
-    title: "Design & User Experience",
-    description: "I create intuitive and aesthetically pleasing designs that focus on user-centered experiences."
-  },
-  {
-    title: "Custom Development",
-    description: "I write clean, efficient code to build custom solutions tailored to the specific needs of the project."
-  },
-  {
-    title: "API Integration",
-    description: "I integrate third-party services and APIs to enhance functionality and improve user experience."
-  },
-  {
-    title: "Testing & Optimization",
-    description: "I conduct rigorous testing to ensure functionality, performance, and security across all platforms."
-  },
-  {
-    title: "Continuous Support & Maintenance",
-    description: "I provide ongoing support and updates to ensure the project remains relevant and fully functional over time."
-  }
-];
-
 export default function PortfolioGrid() {
   return (
     <div className="bg-black w-full pt-40 min-h-screen py-8">
@@ -171,11 +146,11 @@ export default function PortfolioGrid() {
           title="Let's work together"
           description="on your next project"
           className="md:col-span-4 h-64"
-          email="talaganarajesh@gmail.com"
+          email="manideepknv@gmail.com"
           background={
             <div className="flex justify-center items-center mt-4">
               <div className="h-16 w-16 rounded-full bg-purple-700 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">TR</span>
+                <span className="text-white font-bold text-xl">KM</span>
               </div>
             </div>
           }

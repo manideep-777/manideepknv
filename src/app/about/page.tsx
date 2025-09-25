@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 // Import social icons
-import profileImage from '/public/talaganaRajesh.jpg'; // Replace with your actual image path
+import profileImage from '/public/manideepknv.png';
+ // Replace with your actual image path
 
 interface TimelineItem {
   id: number;
@@ -29,21 +30,21 @@ export default function AboutPage() {
   const timelineItems: TimelineItem[] = [
     {
       id: 1,
-      date: "AUG 2023 - PRESENT",
+      date: "JULY 2025 - PRESENT",
       title: "Full-Stack Developer",
       company: "Freelance & Personal Projects",
       location: "Berhampur, Odisha, India",
       remote: true,
       description: "As a passionate web developer, I specialize in creating responsive, accessible, and performance-optimized websites. My journey into full-stack development allows me to deliver impactful and real-world solutions. My focus is on mastering modern web technologies while making valuable contributions to various freelance and personal projects.",
       achievements: [
-        "Developed 'GetMaterial' – a dynamic, user-driven notes-sharing platform for Nist students. The platform has gained popularity with over 120 notes uploaded within the first week of launch, promoting collaboration and knowledge sharing.",
-        "Built 'Lemon Studio' – a creative portfolio website for a dubai based photography studio. The platform showcases services, previous work, and provides a sleek, professional user experience, leveraging modern design principles and technologies.",
-        "Created 'AgroVision' – an AI-powered crop disease detection platform that connects farmers with actionable insights. Using Python for backend AI modeling and React for the frontend, this platform serves as a valuable tool for agriculture, empowering users to detect diseases and take preventive actions.",
-        "Developed a platform allowing users to engage in anonymous chats, featuring real-time messaging and AI-powered replies for dynamic conversations. The platform supports threaded discussions for better organization and includes a safe moderation system to ensure healthy interactions. Additionally, Cloudflare integration enhances security and optimizes platform performance.",
-        "Developed a website for Web Cros, an agency offering services like website development and SEO. The site showcases their services and projects, with an intuitive interface for easy client communication, built using modern JavaScript frameworks for performance and scalability.",
-        "Utilized cutting-edge web technologies such as React, TypeScript, Next.js, Tailwind CSS, and Vercel to build modern, scalable, and responsive web applications.",
-      ],
-      skills: ["React.js", "TypeScript", "Next.js", "Tailwind CSS", "Vercel", "HTML", "CSS", "JavaScript"],
+  "Engineered 'Daily Governance News System' for the Andhra Pradesh Secretariat, automating real-time news fetch, AI-powered summarization, and PDF reporting, improving governance information accessibility.",
+  "Developed 'Crown Shopping' – a modern React + TypeScript e-commerce platform featuring Firebase authentication, Google Sign-in, category navigation, cart persistence, and responsive UI.",
+  "Built 'Realtime MERN Chat App' with Socket.io, enabling instant messaging, online user tracking, Cloudinary media uploads, and JWT-secured authentication, deployed seamlessly on Render.",
+  "Leveraged cutting-edge technologies including React, Next.js, TypeScript, Tailwind CSS, Firebase, MongoDB, Flask, and Vercel to deliver high-performance, scalable applications across domains.",
+  "Team of 5 we organized and hosted a national-level hackathon at our college, fostering innovation and collaboration among participants from across the country.",
+  "Collaborated effectively in diverse teams, contributing to full-stack development, deployment, and problem-solving under real-world deadlines and high-pressure environments."
+],
+      skills: ["React.js", "TypeScript", "Next.js", "Tailwind CSS", "Vercel", "HTML", "CSS", "JavaScript","Nodejs", "Express.js","Python","GitHub"],
     },
     {
       id: 2,
@@ -61,20 +62,36 @@ export default function AboutPage() {
       skills: ["Java", "Python", "Data Structures", "Algorithms", "Problem Solving", "GeeksforGeeks"],
     },
     {
-      id: 3,
-      date: "JUL 2024",
-      title: "Computer Vision & Machine Learning Intern",
-      company: "NIST University, Berhampur",
-      location: "Berhampur, Odisha, India",
-      remote: false,
-      description: "Completed an internship in AI and computer vision with a focus on developing deep learning models for real-world applications. The project, centered around English alphabet detection, involved collaborating with a team to implement and optimize an AI-based solution using Python and machine learning techniques.",
-      achievements: [
-        "Led the development of the 'Predictions and Visualization' module, which enabled real-time predictions and visualized AI model performance through graphical representations.",
-        "Utilized Python, OpenCV, and machine learning libraries to build a custom alphabet detection model capable of recognizing and classifying handwritten characters.",
-        "Successfully presented the project to faculty, showcasing end-to-end model development, from data collection and preprocessing to model evaluation and deployment."
-      ],
-      skills: ["Python", "Computer Vision", "OpenCV", "Machine Learning", "Google Colab"],
-    }
+  id: 3,
+  date: "JULY-SEPTEMBER 2025",
+  title: "Full-Stack Developer (Governance Automation Suite)",
+  company: "Andhra Pradesh Secretariat – RTGS",
+  location: "Amaravati, Andhra Pradesh, India",
+  remote: false,
+  description:
+    "Contributed to the development of a Governance Automation Suite for the Andhra Pradesh Secretariat, integrating real-time governance news reporting with automated district-level monitoring. The system focused on AI-powered summarization, PDF generation, and seamless WhatsApp-based delivery to officials.",
+  achievements: [
+    "Built a Flask backend integrated with NewsData.io API to fetch and clean real-time Andhra Pradesh governance news.",
+    "Implemented AI-driven categorization and summarization using Gemini AI, streamlining decision-making for officials.",
+    "Developed automated PDF report generation with Playwright and ReportLab, ensuring accurate and timely insights.",
+    "Engineered workflows to generate district-specific PDF reports with visual charts and performance metrics.",
+    "Integrated WhatsApp Business Cloud API for secure, real-time delivery of reports to all District Collectors.",
+    "Implemented AI-based highlights and alerts in reports, enabling officials to quickly identify critical issues."
+  ],
+  skills: [
+    "React",
+    "Flask",
+    "FastAPI",
+    "Playwright",
+    "PDFKit",
+    "Python",
+    "Gemini AI",
+    "REST API",
+    "MongoDB",
+    "WhatsApp Business API",
+    "Automation"
+  ]
+}
   ];
   
   // Handle scroll events to update active timeline item based on visibility
@@ -189,7 +206,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-gray-400 ml-5 md:ml-0 uppercase tracking-wider font-medium text-xs md:text-sm mb-2"
         >
-          MORE ABOUT ME
+          {/* MORE ABOUT ME */}
         </motion.div>
 
         <motion.div
@@ -205,11 +222,11 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="w-full lg:w-1/3 relative mx-auto max-w-[250px] md:max-w-full lg:mx-0"
           >
-            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600 to-pink-500 p-1">
-              <div className="rounded-xl overflow-hidden aspect-square">
+            <div className="rounded-full overflow-hidden bg-gradient-to-br from-purple-600 to-pink-500 p-1">
+              <div className="rounded-full overflow-hidden aspect-square">
                 <Image
                   src={profileImage}
-                  alt="Talagana Rajesh"
+                  alt="Kandepu Naga Venkata Manideep"
                   width={400}
                   height={400}
                   className="w-full h-full object-cover"
@@ -217,7 +234,6 @@ export default function AboutPage() {
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEtAJJUw8YhgAAAABJRU5ErkJggg=="
                   loading="eager"
                   priority
-
                 />
               </div>
             </div>
@@ -225,27 +241,27 @@ export default function AboutPage() {
 
           <div className="lg:w-2/3 mt-6 md:mt-0">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center lg:text-left">
-              Hi there! I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Rajesh</span>
+              Hi there! I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Manideep</span>
             </h1>
 
             <div className="space-y-3 md:space-y-4 text-gray-300 text-sm md:text-base">
-              <p>I&apos;m Talagana Rajesh, a passionate web developer dedicated to building impactful and user-friendly websites. I specialize in React, Next.js and modern frontend technologies, and I&apos;m constantly exploring AI and machine learning to integrate into web solutions.</p>
+              <p>I&apos;m Kandepu Naga Venkata Manideep, a passionate web developer dedicated to building impactful and user-friendly websites. I specialize in React, Next.js and modern frontend technologies, and I&apos;m constantly exploring AI, machine learning and Gen ai to integrate into web solutions.</p>
 
               <p>When I&apos;m not coding, I&apos;m brainstorming new ideas, learning emerging tech, or helping others grow. I believe in consistency, curiosity, and leveling up every day.</p>
 
               <p>I wake up each day excited to build something meaningful and work towards becoming a top developer!</p>
 
               <div className="flex justify-center lg:justify-start gap-4 pt-2">
-                <Link href="https://www.linkedin.com/in/talaganaRajesh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/knv-manideep-81664926a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
                 </Link>
-                <Link href="https://github.com/talaganaRajesh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Link href="https://github.com/manideep-777" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
                 </Link>
-                <Link href="https://x.com/Rajeshtalagana" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                {/* <Link href="https://x.com/Rajeshtalagana" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                   <Twitter className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
-                </Link>
-                <Link href="mailto:talaganarajesh@gmail.com" aria-label="Email">
+                </Link> */}
+                <Link href="mailto:manideepknv@gmail.com" aria-label="Email">
                   <Mail className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
                 </Link>
               </div>

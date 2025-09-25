@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react"; // icon package
+import profileImage from '/public/logo.png';
 
 interface NavItem {
   name: string;
@@ -82,7 +84,10 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="text-2xl w-24 font-bold">
           <div className="flex items-center">
-            <span className="text-white">TR</span>
+            <span className="text-white"></span>
+            <Image src={profileImage} alt="Profile" 
+            className="h-auto w-15"/>
+            <span className="text-white"></span>
           </div>
         </Link>
 

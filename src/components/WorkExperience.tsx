@@ -13,86 +13,13 @@ import {
   Users,
   Zap,
   Building2,
-  Car
+  Car,
+  Cpu
 } from 'lucide-react';
 import Image from 'next/image';
-import type { StaticImageData } from 'next/image';
 
-// Logos
-import DOALogo from '/public/assets/DOA-whiteLogo.png';
-import FramttLogo from '/public/assets/framtt-logo.png'; 
-
-// Screenshots for DealsOfAgro only
-import ss3 from '/public/assets/DOA-ss1.png';
-import ss2 from '/public/assets/DOA-ss2.png';
-import ss1 from '/public/assets/DealsOfAgroImage.png';
-
-interface WorkExperience {
-  company: string;
-  role: string;
-  duration: string;
-  location: string;
-  description: string[];
-  logo: string | StaticImageData;
-  screenshots?: (string | StaticImageData)[];
-  website: string;
-  achievements: string[];
-  techStack: string[];
-}
-
-const workData: WorkExperience[] = [
-  {
-    company: 'DealsOfAgro',
-    role: 'Full-Stack Developer',
-    duration: 'April 2025 - Present',
-    location: 'Odisha, India',
-    description: [
-      'Spearheading the development of an innovative e-commerce platform that revolutionizes how farmers access agricultural machinery across Odisha.',
-      'Architected and implemented a scalable, responsive web application using Next.js, TypeScript, and modern web technologies.',
-      'Designed intuitive user interfaces specifically tailored for the agricultural community, ensuring ease of use for farmers of all technical backgrounds.',
-      'Developed comprehensive backend systems handling product catalogs, secure transactions, user management, and dealer networks.',
-      'Integrated advanced search and filtering capabilities to help farmers find the right machinery for their specific needs.',
-      'Collaborated closely with stakeholders to align technical solutions with business objectives and user requirements.'
-    ],
-    logo: DOALogo,
-    screenshots: [ss1, ss2, ss3],
-    website: 'https://www.dealsofagro.com',
-    achievements: [
-      'Serving 30+ Districts across Odisha',
-      '500+ Agricultural Machinery Listed',
-      '100+ Active Dealers on Platform',
-      'Built from Scratch to Production'
-    ],
-    techStack: [
-      'Next.js', 'TypeScript', 'Tailwind CSS',
-      'Node.js', 'Firebase', 'Figma', 'Vercel'
-    ]
-  },
-  {
-    company: 'Framtt',
-    role: 'Full-Stack Developer',
-    duration: 'May 2025 - Present',
-    location: 'Remote, India',
-    description: [
-      'Developing the main car rental management dashboard for a fast-growing startup.',
-      'Building tenant-focused features where companies manage car details, bookings, availability, and customer data.',
-      'Implementing scalable backend services for booking logic, availability tracking, and secure data handling.',
-      'Collaborating with the startup team to deliver a seamless, user-friendly platform optimized for both admins and tenants.'
-    ],
-    logo: FramttLogo,
-    website: 'https://www.framtt.com',
-    achievements: [
-      'Designed and developed the core tenant dashboard',
-      'Improved booking and management workflows',
-      'Collaborated with a cross-functional startup team',
-      'Delivered scalable full-stack solutions'
-    ],
-    techStack: [
-      'Next.js', 'Tailwind CSS','Framer Motion',
-      'Node.js', 'Express', 'Supabase', 'TypeScript'
-    ]
-  }
-];
+// Import work experience data from data.ts
+import { workData } from '../lib/data';
 
 const WorkExperience: React.FC = () => {
   const containerVariants = {
@@ -131,7 +58,7 @@ const WorkExperience: React.FC = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 mb-4 sm:mb-6">
-            <Building2 className="w-4 h-4 text-green-400" />
+            <Building2 className="w-4 h-4 text-blue-400" />
             <span className="text-xs sm:text-sm text-gray-300">Professional Experience</span>
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-3 sm:mb-4">
@@ -155,12 +82,12 @@ const WorkExperience: React.FC = () => {
                 <div className="relative bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all duration-300">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 sm:mb-8">
                     <div className="flex items-center mb-4 lg:mb-0">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-900 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-900 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg p-1">
                         <Image src={work.logo} alt="logo" className="object-contain" />
                       </div>
                       <div>
                         <h3 className="text-xl sm:text-3xl font-bold text-white mb-1">{work.company}</h3>
-                        <p className="text-sm sm:text-xl text-green-400 font-semibold">{work.role}</p>
+                        <p className="text-sm sm:text-xl text-blue-400 font-semibold">{work.role}</p>
                       </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-gray-400 text-xs sm:text-sm">
@@ -177,9 +104,7 @@ const WorkExperience: React.FC = () => {
 
                   <div className="mb-6 sm:mb-8">
                     <p className="text-sm sm:text-lg text-gray-300 leading-relaxed mb-4">
-                      {work.company === 'DealsOfAgro'
-                        ? "At DealsOfAgro, I’m pioneering the development of a comprehensive e-commerce platform that’s transforming how farmers across Odisha access and purchase agricultural machinery — creating a digital bridge between technology and traditional farming."
-                        : "At Framtt, I’m building the core car rental management dashboard, empowering tenants to efficiently manage cars, bookings, and operations for a streamlined rental experience."}
+                      {work.headlineDescription}
                     </p>
                   </div>
 
@@ -189,13 +114,13 @@ const WorkExperience: React.FC = () => {
                       <motion.div
                         key={index}
                         variants={itemVariants}
-                        className="bg-zinc-800 rounded-lg p-3 sm:p-4 text-center border border-green-900 hover:border-green-500/50 transition-colors duration-300"
+                        className="bg-zinc-800 rounded-lg p-3 sm:p-4 text-center border border-blue-900 hover:border-blue-500/50 transition-colors duration-300"
                       >
-                        <div className="text-green-400 font-bold text-base mb-1">
-                          {index === 0 && <Users className="w-5 h-5 mx-auto mb-1" />}
-                          {index === 1 && (work.company === 'DealsOfAgro' ? <Tractor className="w-5 h-5 mx-auto mb-1" /> : <Car className="w-5 h-5 mx-auto mb-1" />)}
-                          {index === 2 && <Globe className="w-5 h-5 mx-auto mb-1" />}
-                          {index === 3 && <Zap className="w-5 h-5 mx-auto mb-1" />}
+                        <div className="text-blue-400 font-bold text-base mb-1">
+                          {index === 0 && <Zap className="w-5 h-5 mx-auto mb-1" />}
+                          {index === 1 && <Globe className="w-5 h-5 mx-auto mb-1" />}
+                          {index === 2 && <Cpu className="w-5 h-5 mx-auto mb-1" />}
+                          {index === 3 && <Users className="w-5 h-5 mx-auto mb-1" />}
                         </div>
                         <p className="text-xs sm:text-sm text-gray-300 font-medium">{achievement}</p>
                       </motion.div>
@@ -205,13 +130,13 @@ const WorkExperience: React.FC = () => {
                   {/* Responsibilities */}
                   <div className="mb-6 sm:mb-8">
                     <h4 className="text-lg sm:text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                      <Code className="w-5 h-5 text-green-400" />
+                      <Code className="w-5 h-5 text-blue-400" />
                       Key Responsibilities
                     </h4>
                     <ul className="space-y-3">
                       {work.description.map((point, index) => (
                         <motion.li key={index} variants={itemVariants} className="flex items-start group">
-                          <div className="w-2 h-2 bg-green-400 rounded-full mr-3 mt-2 flex-shrink-0 group-hover:bg-green-300 transition-colors"></div>
+                          <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 mt-2 flex-shrink-0  transition-colors"></div>
                           <span className="text-sm sm:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
                             {point}
                           </span>
@@ -257,7 +182,7 @@ const WorkExperience: React.FC = () => {
                           >
                             <div className="absolute -inset-1 bg-gradient-to-r from-zinc-600 to-zinc-500 rounded-lg blur opacity-10 group-hover:opacity-20 transition duration-300"></div>
                             <div className="relative bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 aspect-video">
-                              <Image src={screenshot} alt="screenshot" fill className="object-cover" />
+                              <Image src={screenshot} alt="screenshot" fill className="object-fit" />
                             </div>
                           </motion.div>
                         ))}
@@ -267,14 +192,10 @@ const WorkExperience: React.FC = () => {
 
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-between pt-5 border-t border-zinc-800">
                     <p className="text-sm text-gray-400 flex items-center gap-2">
-                      {work.company === 'DealsOfAgro'
-                        ? <Tractor className="w-5 h-5 text-green-400" />
-                        : <Car className="w-5 h-5 text-green-400" />}
-                      {work.company === 'DealsOfAgro'
-                        ? 'Revolutionizing agriculture through technology'
-                        : 'Transforming car rental management with technology'}
+                      <Zap className="w-5 h-5 text-blue-400" />
+                      {work.footerDescription}
                     </p>
-                    <motion.a
+                    {/* <motion.a
                       href={work.website}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -284,7 +205,7 @@ const WorkExperience: React.FC = () => {
                     >
                       Visit {work.company}
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </motion.a>
+                    </motion.a> */}
                   </div>
                 </div>
               </div>

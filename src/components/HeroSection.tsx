@@ -6,22 +6,21 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import myPhoto from "/public/talaganaRajesh.jpg";
+import myPhoto from "/public/manideepknv.png";
 
 export default function HeroSection() {
   return (
-    <div className="relative min-h-[100svh] w-full h-full overflow-hidden">
+    <div className="relative min-h-[100svh] w-full h-full overflow-hidden bg-black">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-black/60 z-0">
-        {/* Star field effect */}
       </div>
 
       {/* Planet curve at bottom - Responsive */}
-      <div className="absolute border-b-4 sm:border-b-6 md:border-b-8 mb-1 sm:mb-2 border-black bottom-0 left-0 right-0 h-40 sm:h-48 md:h-52 lg:h-40 xl:h-32 bg-purple-900 rounded-t-[100%] blur-md z-0"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-48 md:h-52 lg:h-40 xl:h-32 bg-black/90 rounded-t-[100%] z-0"></div>
+      <div className="absolute border-b-4 sm:border-b-6 md:border-b-8 mb-1 sm:mb-2 border-black bottom-0 left-0 right-0 h-40 sm:h-48 md:h-52 lg:h-40 xl:h-32 bg-purple-900 rounded-t-[100%] blur-md z-100"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-48 md:h-52 lg:h-40 xl:h-32 bg-black/90 rounded-t-[100%] z-150"></div>
 
       {/* Main Content - Centered in viewport */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-3 sm:px-4 lg:px-6 xl:px-8 z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-3 sm:px-4 lg:px-6 xl:px-8 z-20">
         <div className="container mx-auto max-w-7xl 2xl:max-w-8xl flex flex-col justify-center items-center">
           {/* Announcement banner */}
           <motion.div
@@ -70,10 +69,10 @@ export default function HeroSection() {
               <span
                 className="mx-1.5 sm:mx-2 px-2 sm:px-3 md:px-5 py-0.5 sm:py-1 text-white bg-purple-700 inline-block text-sm sm:text-base md:text-lg lg:text-xl"
                 style={{
-                  clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)"
+                  clipPath: "polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%)"
                 }}
               >
-                Talagana Rajesh
+                Kandepu Naga Venkata Manideep
               </span>
             </p>
             
@@ -108,7 +107,7 @@ export default function HeroSection() {
       </div>
 
       {/* CTA Section - Fixed at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 pb-4 sm:pb-6 md:pb-8 lg:pb-12">
+      <div className="absolute bottom-0 left-0 right-0 z-200 pb-4 sm:pb-6 md:pb-8 lg:pb-12">
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full px-3 sm:px-4 lg:px-6"
           initial={{ opacity: 0, y: 20 }}
@@ -137,7 +136,7 @@ export default function HeroSection() {
               <rect x="2" y="4" width="20" height="16" rx="2" stroke="gray" strokeWidth="2" />
               <path d="M2 7L9.95263 12.4526C10.5936 12.8747 11.3796 13.0964 12.1748 13.0964C12.97 13.0964 13.756 12.8747 14.397 12.4526L22 7" stroke="gray" strokeWidth="2" />
             </svg>
-            <span className="text-zinc-400 hover:text-purple-500 transition-all duration-300 text-xs sm:text-sm md:text-base lg:text-lg truncate">talaganarajesh@gmail.com</span>
+            <span className="text-zinc-400 hover:text-purple-500 transition-all duration-300 text-xs sm:text-sm md:text-base lg:text-lg truncate">manideepknv@gmail.com</span>
           </a>
         </motion.div>
       </div>

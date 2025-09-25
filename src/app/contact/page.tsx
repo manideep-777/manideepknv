@@ -61,7 +61,7 @@ export default function ContactPage() {
   }
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+919692544587"
+    const phoneNumber = "+919154628898"
     const message = "Hi! I'm coming from your portfolio website. I need website services."
     const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
@@ -71,24 +71,24 @@ export default function ContactPage() {
     {
       name: "Instagram",
       icon: FaInstagram,
-      href: "https://www.instagram.com/talagana.rajesh", 
+      href: "https://www.instagram.com/manideepknv/", 
       color: "hover:text-pink-500",
       description: "Follow my journey"
     },
     {
       name: "LinkedIn",
       icon: FaLinkedin,
-      href: "https://linkedin.com/in/talaganaRajesh", 
+      href: "https://linkedin.com/in/knv-manideep-81664926a/", 
       color: "hover:text-blue-500",
       description: "Professional network"
     },
-    {
-      name: "YouTube",
-      icon: FaYoutube,
-      href: "https://www.youtube.com/@TalaganaRajeshYT", 
-      color: "hover:text-red-500",
-      description: "Watch my content"
-    },
+    // {
+    //   name: "YouTube",
+    //   icon: FaYoutube,
+    //   href: "https://www.youtube.com/@TalaganaRajeshYT", 
+    //   color: "hover:text-red-500",
+    //   description: "Watch my content"
+    // },
   ]
 
   return (
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium text-white text-sm">WhatsApp</p>
-                      <p className="text-gray-400 text-xs">+91 9692544587</p>
+                      <p className="text-gray-400 text-xs">+91 9154628898</p>
                     </div>
                   </div>
                 </div>

@@ -3,38 +3,8 @@
 import { useRef, useEffect, useState } from "react"
 import { motion, useAnimation, useMotionValue, AnimatePresence } from "framer-motion"
 
-const features = [
-  {
-    title: "Website Development",
-    description: "Custom-built websites tailored to your vision.",
-    icon: "💻",
-    details: "I design and develop responsive, high-performance websites from scratch using modern technologies. Whether it's a portfolio, blog, or business site, I ensure intuitive navigation, scalable architecture, and seamless user experience aligned with your goals."
-  },
-  {
-    title: "SEO Optimized",
-    description: "Engineered for better visibility and higher rankings.",
-    icon: "🔎",
-    details: "I follow SEO best practices like semantic HTML, optimized metadata, clean URL structures, and fast-loading pages to improve your website’s search engine visibility. This helps drive organic traffic and boosts your online presence effectively."
-  },
-  {
-    title: "Modern Design",
-    description: "Clean, contemporary UI that reflects your brand.",
-    icon: "🎨",
-    details: "I use modern UI/UX design principles to craft visually appealing and user-friendly interfaces. My focus is on clarity, consistency, and engagement—using minimal design aesthetics, smooth interactions, and accessible layouts that leave a lasting impression."
-  },
-  {
-    title: "Responsive",
-    description: "Perfect experience across all devices and screen sizes.",
-    icon: "📱",
-    details: "I ensure that every website I build works flawlessly on desktops, tablets, and smartphones. Using responsive layouts, flexible grids, and mobile-first design techniques, I deliver smooth functionality and elegant visuals on every screen."
-  },
-  {
-    title: "Landing Pages",
-    description: "High-converting pages built for impact and speed.",
-    icon: "⚡",
-    details: "I create Applied fast, optimized landing pages designed to convert visitors into customers. From compelling headlines to focused call-to-actions, I make sure every element serves a purpose—delivering both performance and results."
-  }
-];
+// Feature cards data for the bottom section importing from data.ts
+import { features } from "../lib/data"
 
 export default function Services() {
   const [width, setWidth] = useState(0)
