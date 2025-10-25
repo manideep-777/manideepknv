@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://manideepknv-7asm.vercel.app
+
+# Sitemaps
+Sitemap: https://manideepknv-7asm.vercel.app/sitemap.xml
