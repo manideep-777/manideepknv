@@ -6,14 +6,11 @@ import {
   Code,
   Calendar,
   MapPin,
-  ExternalLink,
-  Tractor,
   Database,
   Globe,
   Users,
   Zap,
   Building2,
-  Car,
   Cpu
 } from 'lucide-react';
 import Image from 'next/image';

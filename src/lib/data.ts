@@ -31,24 +31,23 @@ import daisyui from '../assets/tech_logos/daisyui.png';
 import zustand from '../assets/tech_logos/zustand.png';
 import cloudinary from '../assets/tech_logos/cloudinary.png';
 import render from '../assets/tech_logos/render.webp';
-import gemini from '/public/assets/gemini.webp';
 import uploadthing from '../assets/tech_logos/uploadthing.png';
 import RTGSLogo from '../assets/project_images/rtgs.png';
 
 import type { StaticImageData } from 'next/image';
 
-import GetMaterialImage from '/public/assets/getmaterial.png';
-import LemonStudioImage from '/public/assets/lemonstudio.png';
-import OpenRoomImage from '/public/assets/openroom-image.png';
-import AgroVisionImage from '/public/assets/agrovision.png';
-import PortfolioImage from '/public/assets/portfolio.png';
-import WebCrosImage from '/public/assets/web-cros.png';
-import DealsOfAgroImage from '/public/assets/DealsOfAgroImage.png';
-import HeyDropImage from '/public/assets/HeyDrop.png';
-import cloudflare from '/public/assets/cloudflare.png';
-import emailjs from '/public/assets/emailjs.jpeg';
-import framer from '/public/assets/framermotion.png';
-import upstash from '/public/assets/upstash.png';
+// import GetMaterialImage from '/public/assets/getmaterial.png';
+// import LemonStudioImage from '/public/assets/lemonstudio.png';
+// import OpenRoomImage from '/public/assets/openroom-image.png';
+// import AgroVisionImage from '/public/assets/agrovision.png';
+// import PortfolioImage from '/public/assets/portfolio.png';
+// import WebCrosImage from '/public/assets/web-cros.png';
+// import DealsOfAgroImage from '/public/assets/DealsOfAgroImage.png';
+// import HeyDropImage from '/public/assets/HeyDrop.png';
+// import cloudflare from '/public/assets/cloudflare.png';
+// import emailjs from '/public/assets/emailjs.jpeg';
+// import framer from '/public/assets/framermotion.png';
+// import upstash from '/public/assets/upstash.png';
 
 
 
@@ -59,14 +58,14 @@ import MernChatAppImage from '../assets/project_images/mernchatapp.png';
 
 
 // Logos
-import DOALogo from '../assets/project_images/DOA-whiteLogo.png';
-import FramttLogo from '../assets/tech_logos/framtt-logo.png';
+// import DOALogo from '../assets/project_images/DOA-whiteLogo.png';
+// import FramttLogo from '../assets/tech_logos/framtt-logo.png';
 
 // Screenshots for DealsOfAgro only
 import ss3 from '../assets/project_images/realtime-news3.png';
 import ss2 from '../assets/project_images/realtime-news2.png';
 import ss1 from '../assets/project_images/realtime-news1.png';
-import { string } from 'zod';
+// import { string } from 'zod';
 
 
 

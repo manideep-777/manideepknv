@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from "next/navigation";
@@ -25,13 +25,13 @@ const NavBar: React.FC<NavBarProps> = ({ className }) => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
 
-  const navItems: NavItem[] = [
+  const navItems: NavItem[] = useMemo(() => [
     { name: "Home", url: "/" },
     { name: "Projects", url: "/projects" },
     { name: "About", url: "/about" },
     {name :"Experience", url:"/experience"},
     { name: "Contact", url: "/contact" }
-  ];
+  ], []);
 
   useEffect(() => {
     const currentPath = pathname;

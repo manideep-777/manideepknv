@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import emailjs from "@emailjs/browser"
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube, FaTwitter, FaPhone } from "react-icons/fa"
+import toast, { Toaster } from 'react-hot-toast'
+import { FaInstagram, FaLinkedin, FaPhone } from "react-icons/fa"
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -34,27 +35,49 @@ export default function ContactPage() {
     },
   })
 
+  
   async function onSubmit(values: FormSchema) {
     setIsSubmitting(true)
 
     try {
+      // console.log(formRef.current!)
       const response = await emailjs.sendForm(
-        "service_185m7xb",
-        "template_jhrfdll",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formRef.current!,
-        "OPzKfISUUk4p8vW-B"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
 
       if (response.status === 200) {
         console.log(values)
         reset()
-        alert("Thank you for your message. We'll get back to you soon!")
+        toast.success("Thank you for your message! I&apos;ll get back to you soon! 🚀", {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            background: '#10b981',
+            color: '#ffffff',
+            borderRadius: '8px',
+            fontSize: '14px',
+            fontWeight: '500'
+          },
+        })
       } else {
         throw new Error("Failed to send message")
       }
     } catch (error) {
       console.error("Error sending message:", error)
-      alert("Message failed to send. Please try again later.")
+      toast.error("Message failed to send. Please try again later! 😔", {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: '#ef4444',
+          color: '#ffffff',
+          borderRadius: '8px',
+          fontSize: '14px',
+          fontWeight: '500'
+        },
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -102,7 +125,7 @@ export default function ContactPage() {
         >
           <h2 className="text-3xl font-bold sm:text-4xl mb-4">Get in Touch</h2>
           <p className="text-sm text-gray-400">
-            Feel free to reach out, I'll get back to you soon.
+            Feel free to reach out, I&apos;ll get back to you soon.
           </p>
         </motion.div>
 
@@ -116,7 +139,7 @@ export default function ContactPage() {
               className="w-80"
             >
               <div className="bg-zinc-950 border border-zinc-900 rounded-md p-6 hover:border-zinc-800 transition-all duration-300 h-full flex flex-col">
-                <h3 className="text-xl font-semibold mb-4 text-yellow-400">Let's Connect</h3>
+                <h3 className="text-xl font-semibold mb-4 text-yellow-400">Let&apos;s Connect</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed text-sm">
                   Ready to start your project? Reach out through any of these channels.
                 </p>
@@ -184,6 +207,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-gray-300">Name</label>
                       <input
                         type="text"
+                        // name="from_name"
                         {...register("name")}
                         placeholder="John Doe"
                         className="mt-1 block w-full py-3 px-4 bg-[#0f0f0f] text-white font-medium border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 placeholder-gray-500"
@@ -196,6 +220,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-gray-300">Email</label>
                       <input
                         type="email"
+                        // name="from_email"
                         {...register("email")}
                         placeholder="john@example.com"
                         className="mt-1 block w-full py-3 px-4 bg-[#0f0f0f] text-white font-medium border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 placeholder-gray-500"
@@ -207,6 +232,7 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <label className="block text-sm font-medium text-gray-300">Message</label>
                       <textarea
+                        // name="message"
                         {...register("message")}
                         placeholder="Tell me about your project..."
                         className="mt-1 block w-full py-3 px-4 h-full min-h-[120px] bg-[#0f0f0f] text-white font-medium border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 placeholder-gray-500 resize-none"
@@ -231,6 +257,9 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      
+      {/* Toast Container */}
+      <Toaster />
     </section>
   )
 }
