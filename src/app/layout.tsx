@@ -21,6 +21,29 @@ export const metadata: Metadata = {
   authors: [{ name: "Kandepu Nage Venkata Manideep" }],
   description: "Portfolio website of Kandepu Nage Venkata Manideep - Full stack developer and Founder of Get Material NIST notes",
   icons: "/logo.png",
+  metadataBase: new URL('https://manideepknv.vercel.app'),
+  openGraph: {
+    title: "Kandepu Nage Venkata Manideep - Full Stack Developer",
+    description: "Portfolio website of Kandepu Nage Venkata Manideep - Full stack developer",
+    url: 'https://manideepknv.vercel.app',
+    siteName: 'Manideep Portfolio',
+    images: [
+      {
+        url: '/manideepknv.png',
+        width: 1200,
+        height: 630,
+        alt: 'Kandepu Nage Venkata Manideep',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kandepu Nage Venkata Manideep - Full Stack Developer',
+    description: 'Portfolio website of Kandepu Nage Venkata Manideep - Full stack developer',
+    images: ['/manideepknv.png'],
+  },
   keywords: [
     "Kandepu Nage Venkata Manideep",
     "Portfolio of manideep",
@@ -133,8 +156,7 @@ export default function RootLayout({
               sameAs: [
                 "https://www.linkedin.com/in/knv-manideep-81664926a/",
                 "https://github.com/manideep-777",
-                "https://www.instagram.com/manideepknv/",
-                "https://www.instagram.com/talagana.rajesh/"
+                "https://www.instagram.com/manideepknv/"
               ]
             })
           }}
