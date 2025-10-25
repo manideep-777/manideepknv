@@ -127,9 +127,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Kandepu Nage Venkata Manideep",
-              image: "https://manideepknv-7asm.vercel.app/manideepknv.png",
+              image: "https://manideepknv.vercel.app/manideepknv.png",
               jobTitle: "Website Developer",
-              url: "https://manideepknv-7asm.vercel.app/",
+              url: "https://manideepknv.vercel.app/",
               sameAs: [
                 "https://www.linkedin.com/in/knv-manideep-81664926a/",
                 "https://github.com/manideep-777",

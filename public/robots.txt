@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://manideepknv-7asm.vercel.app
+Host: https://manideepknv.vercel.app
 
 # Sitemaps
-Sitemap: https://manideepknv-7asm.vercel.app/sitemap.xml
+Sitemap: https://manideepknv.vercel.app/sitemap.xml
