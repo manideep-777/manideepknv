@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://manideepknv.vercel.app',
+    siteUrl: 'https://manideepknv-7asm.vercel.app',
     generateRobotsTxt: true,
   }
   
