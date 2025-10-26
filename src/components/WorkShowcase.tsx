@@ -62,7 +62,7 @@ export default function WorkShowcaseSnapping() {
   return (
     <div
       ref={componentRef}
-      className="bg-black pt-20 md:pt-32 w-full text-white"
+      className="bg-black pt-20 md:pt-32 w-full text-white relative"
     >
       <div className="pt-5 px-4 md:px-10 max-w-7xl mx-auto">
         <div className="text-center mb-5">

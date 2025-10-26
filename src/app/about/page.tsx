@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, File } from 'lucide-react';
 
 // Import social icons
 import profileImage from '/public/manideepknv.png';
@@ -258,11 +258,11 @@ export default function AboutPage() {
                 <Link href="https://github.com/manideep-777" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
                 </Link>
-                {/* <Link href="https://x.com/Rajeshtalagana" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <Twitter className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
-                </Link> */}
                 <Link href="mailto:manideepknv@gmail.com" aria-label="Email">
                   <Mail className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
+                </Link>
+                <Link href="/manideep resume.pdf" aria-label="Resume" target="_blank">
+                  <File className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-white transition-colors" />
                 </Link>
               </div>
             </div>

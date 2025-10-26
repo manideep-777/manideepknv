@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import myPhoto from "/public/manideepknv.png";
+import ResumeButton from "./ResumeButton";
 
 export default function HeroSection() {
   return (
@@ -138,6 +139,9 @@ export default function HeroSection() {
             </svg>
             <span className="text-zinc-400 hover:text-purple-500 transition-all duration-300 text-xs sm:text-sm md:text-base lg:text-lg truncate">manideepknv@gmail.com</span>
           </a>
+
+          {/* Resume Button */}
+          <ResumeButton />
         </motion.div>
       </div>
     </div>

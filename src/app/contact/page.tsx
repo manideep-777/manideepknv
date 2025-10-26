@@ -188,6 +188,35 @@ export default function ContactPage() {
                     </motion.div>
                   ))}
                 </div>
+
+                {/* View */}
+                <div className="flex-1">
+                  <h4 className="text-base font-medium text-gray-200 mb-3">View</h4>
+                
+                    <motion.div
+                      key={"Resume"}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * 0 }}
+                      className="mb-3"
+                    > 
+                      <a
+                        href={"/manideep resume.pdf"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-3 p-3 bg-[#0f0f0f] rounded-md hover:bg-[#2a2a2a] transition-all duration-300 group"
+                      >
+                        <div className="bg-gray-800 p-2 rounded-md group-hover:bg-gray-700 transition-colors duration-300">
+                          <img src="/file.svg" alt="Resume Icon" className="h-3 sm:h-4 md:h-5 lg:h-6 w-3 sm:w-4 md:w-5 lg:w-6" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-white group-hover:text-yellow-400 transition-colors duration-300 text-sm">View Resume</p>
+                          <p className="text-gray-400 text-xs">Download my resume</p>
+                        </div>
+                      </a>
+                    </motion.div>
+                  
+                </div>
               </div>
             </motion.div>
 

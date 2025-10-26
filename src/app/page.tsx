@@ -12,12 +12,11 @@ import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import WorkExperience from "@/components/WorkExperience";
 
-
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-center items-center font-[family-name:var(--font-geist-sans)]">
       {/* Global LiquidEther Background - covers entire viewport */}
-      <div className="fixed inset-0 w-full h-full z-30">
+      <div className="fixed inset-0 w-full h-full z-30 pointer-events-none overflow-hidden">
         <LiquidEther
           colors={['#5227FF', '#FF9FFC', '#B19EEF']}
           mouseForce={20}
