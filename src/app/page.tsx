@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="relative flex flex-col justify-center items-center font-[family-name:var(--font-geist-sans)]">
       {/* Global LiquidEther Background - covers entire viewport */}
-      <div className="fixed inset-0 w-full h-full z-30 pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 w-full h-full z-30 overflow-hidden">
         <LiquidEther
           colors={['#5227FF', '#FF9FFC', '#B19EEF']}
           mouseForce={20}
@@ -39,7 +39,7 @@ export default function Home() {
       <HeroSection />
 
       {/* <SpaceBg/> */}
-      <div className="z-500">
+      <div className="z-50 relative">
         <Grids />
         <WorkShowcase />
 
