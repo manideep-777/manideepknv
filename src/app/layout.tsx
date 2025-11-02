@@ -145,7 +145,6 @@ export default function RootLayout({
             })
           }}
         />
-        <meta name="google-site-verification" content="ETpfMVbd5MVRbbOSI8n5MtBcYkJc7IUWaw9QGhatoCE" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Pass items to NavBar */}
